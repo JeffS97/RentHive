@@ -44,10 +44,14 @@
   }
   
   .icons {
-    margin-left: 1050px;
+    margin-left: 20px;
   }
   
   .icons i {
     margin-left: 20px;
     font-size: 24px;
+  }
+
+  .spacer {
+    flex-grow: 1; /* Add flex-grow to create blank space */
   }
