@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { HomePage } from "./routes";
+import { HomePage,  NotificationsPage} from "./routes";
 import { LoginPage } from "./routes"
 import { SignupPage } from "./routes";
 import { OnboardingPage3 } from "./routes";
@@ -18,6 +18,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
           {/* <Route path="/sign-in" element={<SignInPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
           <Route path="/blstatus" element={<BLStatusPage />} /> */}

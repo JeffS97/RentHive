@@ -22,6 +22,7 @@ const handleClick = () => {
         <i className="fas fa-search"></i>
         <input className="search-text" type="text" placeholder="Search" />
       </div>
+      <div className="spacer"></div>
       <div className="icons-container">
         <div className="icons">
             <button onClick={handleClick} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px"  }}><img src={HomeButton} alt="icon1" style={{ height: "30px"}} /></button>
