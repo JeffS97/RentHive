@@ -85,6 +85,7 @@ export default function Login() {
                     color="#110B03"
                     width="400px"
                     height="27px"
+                    borderStyle="solid"
                     mt={3}
                     style={{ borderRadius: '5px', borderWidth: '0.7px', borderColor: '#81818' }}
                   />
@@ -97,6 +98,7 @@ export default function Login() {
                     color="#110B03"
                     width="400px"
                     height="27px"
+                    borderStyle="solid"
                     mt={3}
                     style={{ borderRadius: '5px', borderWidth: '0.7px', borderColor: '#81818' }}
                   />
@@ -153,6 +155,7 @@ export default function Login() {
                       borderColor="#F4A82B"
                       bgGradient=""
                       borderRadius="10px"
+                      borderStyle="solid"
                       leftIcon={<Image src={google} height="22px" />}
                     >
                       Log In with Google
@@ -167,6 +170,7 @@ export default function Login() {
                       borderColor="#F4A82B"
                       bgGradient=""
                       borderRadius="10px"
+                      borderStyle="solid"
                       leftIcon={<Image src={facebook} height="22px" />}
                     >
                       Log In with Facebook

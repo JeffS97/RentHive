@@ -21,12 +21,13 @@ import facebook from ".//facebook.png"
 import google from ".//google.png"
 
 
+
 export default function Signup() {
 
   const navigate = useNavigate();
 
   const handleLogIn = () => {
-    navigate("/Login");
+    navigate("/login");
   };
 
   return (
@@ -81,6 +82,7 @@ export default function Signup() {
                   color="#110B03"
                   width="400px"
                   height="27px"
+                  borderStyle="solid"
                   mt={3}
                   style={{ borderRadius: '5px', borderWidth: '0.7px', borderColor: '#81818' }}
                 />
@@ -94,6 +96,7 @@ export default function Signup() {
                   width="400px"
                   height="27px"
                   mt={3}
+                  borderStyle="solid"
                   style={{ borderRadius: '5px', borderWidth: '0.7px', borderColor: '#81818' }}
                 />
 
@@ -107,6 +110,7 @@ export default function Signup() {
                   width="400px"
                   height="27px"
                   mt={3}
+                  borderStyle="solid"
                   style={{ borderRadius: '5px', borderWidth: '0.7px', borderColor: '#81818' }}
                 />
 
@@ -143,6 +147,7 @@ export default function Signup() {
                     color="#4E4E4E"
                     borderColor="#F4A82B"
                     bgGradient=""
+                    borderStyle="solid"
                     borderRadius="10px"
                     leftIcon={<Image src={google} height="22px" />}
                   >
@@ -157,6 +162,7 @@ export default function Signup() {
                     color="#4E4E4E"
                     borderColor="#F4A82B"
                     bgGradient=""
+                    borderStyle="solid"
                     borderRadius="10px"
                     leftIcon={<Image src={facebook} height="22px" />}
                   >
