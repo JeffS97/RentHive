@@ -118,7 +118,7 @@ export default function Onboarding3() {
                 {/* bg="yellow"  */}
                 <Box width="60%" height="600px" margin="auto" display="flex" flexDirection="row">
                     <Stack flexDirection="column" >
-                        <Stack width="70%" >
+                        <Stack width="70%">
                             <Text color="#000000" fontWeight="600" fontSize="18px" mt={20} mb={0}>
                                 Roommate's information
                             </Text>
