@@ -2,7 +2,7 @@ import {
     Box,
     FormControl,
     FormLabel,
-    Input,
+    Input, InputLeftElement,
     Stack,
     Button,
     IconButton,
@@ -16,28 +16,58 @@ import {
     InputGroup,
     InputRightElement,
     ChakraProvider,
+    propNames,
 } from '@chakra-ui/react';
-
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 
 import { ArrowBackIcon } from '@chakra-ui/icons'
 import back from ".//back.png"
 import forward from ".//forward.png"
-import search from ".//search.png"
 import progressIndicator3 from ".//ProgressIndicator3.png"
-import {FiFacebook} from 'react-icons/fi';
+import { AiOutlineSearch } from "react-icons/ai";
+import Search from "../Search";
 var data = require("./MOCK_DATA.json")
 
 
+// Convert the array to a string using JSON.stringify()
+
+// const myArrayString = JSON.stringify(myArray);
+
+// Store the string in local storage using localStorage.setItem()
+
+// localStorage.setItem('myArray', myArrayString)
+
+// const myArrayString = localStorage.getItem('myArray');
+// const myArray = JSON.parse(myArrayString);
+
+// Add a new element to the array
+
+// myArray.push('new element');
+
+// Convert the modified array back to a string
+
+// const updatedArrayString = JSON.stringify(myArray);
+
+// Store the updated string back in local storage
+
+// localStorage.setItem('myArray', updatedArrayString);
 
 export default function Onboarding3() {
+
+    var myArray = []
 
     const navigate = useNavigate();
 
     const handleProceed = () => {
-      navigate("/onboarding4");
+        myArray = onboardFilter
+        const myArrayString = JSON.stringify(onboardFilter);
+        localStorage.setItem('myArray', myArrayString)
+        console.log(myArray)
+        // navigate("/onboarding4");
     };
+
+    const [onboardFilter, setOnboardFilter] = useState([])
 
     const [value, setValue] = useState('')
     const handleValueChange = (e) => {
@@ -49,53 +79,78 @@ export default function Onboarding3() {
         const abc = [...val, searchTerm]
         setVal(abc)
         setValue("")
+        if (searchTerm.split("/").length - 1 > 0) {
+            const len = searchTerm.split("/").length
+            const temp = searchTerm.split("/")
+            const tempArray = [...onboardFilter, temp[len - 1]]
+            setOnboardFilter(tempArray)
+            console.log(onboardFilter)
+        } else {
+            const tempArray = [...onboardFilter, searchTerm]
+            setOnboardFilter(tempArray)
+            console.log(onboardFilter)
+        }
     }
 
     const [val, setVal] = useState([])
 
-    const handleKeyPress = (e) => {
-        if (e.key === "Enter" && value) {
-            const abc = [...val, value]
-            setVal(abc)
-            setValue("")
-        }
-    };
+
+    //WORK ON HANDLIGN KEY PRESS LATER 
+
+    // const handleKeyPress = (e) => {
+    //     if (e.key === "Enter" && value) {
+    //         const abc = [...val, value]
+    //         setVal(abc)
+    //         setValue("")
+    //         if (value.split("/").length - 1 > 0) {
+    //             const len = value.split("/").length
+    //             const temp = value.split("/")
+    //             const tempArray = [...onboardFilter, temp[len - 1]]
+    //             setOnboardFilter(tempArray)
+    //             console.log(onboardFilter)
+    //         } else {
+    //             const tempArray = [...onboardFilter,value]
+    //             setOnboardFilter(tempArray)
+    //             console.log(onboardFilter)
+    //         }
+    //     }
+    // };
 
     const handleDelete = (i) => {
-        console.log("value of i is")
-        console.log(i)
-
         const deleteVal = [...val]
-
         const d = deleteVal.splice(i, 1)
-        console.log(d)
         setVal(deleteVal)
+
+        const deleteOnboardFilter = [...onboardFilter]
+        const e = deleteOnboardFilter.splice(i, 1)
+        setOnboardFilter(deleteOnboardFilter)
     }
 
     var countInterests = -1
     var countTraits = -1
-    var countLocation = -1  
+    var countLocation = -1
 
-//to set background colour but gender buttons
+    //to set background colour but gender buttons
     const [isClickedFemale, setIsClickedFemale] = useState(false);
 
     const handleClickFemale = () => {
-      setIsClickedFemale(!isClickedFemale);
+        setIsClickedFemale(!isClickedFemale);
     };
     const [isClickedMale, setIsClickedMale] = useState(false);
 
     const handleClickMale = () => {
-      setIsClickedMale(!isClickedMale);
+        setIsClickedMale(!isClickedMale);
     };
     const [isClickedOthers, setIsClickedOthers] = useState(false);
 
     const handleClickOthers = () => {
-      setIsClickedOthers(!isClickedOthers);
+        setIsClickedOthers(!isClickedOthers);
     };
+
 
     return (
         <>
-            <Image src={progressIndicator3} height="90%" width="90%" ml="60px" />
+            <Image src={progressIndicator3} mt="20px" height="90%" width="90%" ml="60px" />
             <Box width="80%" display="flex" margin="auto" flexDirection="column" >
                 <Heading
                     color="#110B03"
@@ -191,6 +246,32 @@ export default function Onboarding3() {
                             </Box>
                             <Box style={{ marginTop: "0px" }}>
 
+                                <Flex >
+                                    <InputGroup mt="10px" >
+                                        <InputLeftElement mt="5px" ml="12px"
+                                            pointerEvents="none"
+                                            children={<AiOutlineSearch color="gray.300" />} />
+                                        <Input
+                                            height="28px" width="450px" pl="40px"
+                                            borderRadius="12px" borderColor="transparent"
+                                            outline="none"
+                                            bg="#FEF9EC"
+                                            type="search"
+
+                                            disabled={false}
+                                            value={value}
+                                            placeholder="  Search filters..."
+                                            color=" #5A5A5A"
+                                            fontStyle="italic"
+                                            fontWeight="400"
+                                            fontSize="12px"
+                                            onChange={handleValueChange}
+                                            // onKeyDown={handleKeyPress}
+                                             />
+                                    </InputGroup>
+                                </Flex>
+
+                                {/* 
                                 <div style={{ position: "relative" }}>
                                     <input
                                         style={{
@@ -213,12 +294,12 @@ export default function Onboarding3() {
                                         style={{ position: "absolute", top: "50%", left: "0px", transform: "translateY(-50%)" }} />
 
 
-                                </div>
+                                </div> */}
 
                                 <div >
                                     <div style={{
                                         zIndex: "1", position: "absolute", backgroundColor: "#FEF9EC",
-                                        marginLeft: "20px", width: "200px", borderRadius:"12px"
+                                        marginLeft: "20px", width: "200px", borderRadius: "12px"
                                     }}>
                                         {data.filter(item => {
                                             const searchTerm = value.toLowerCase();
@@ -365,7 +446,7 @@ export default function Onboarding3() {
                                         <div bg="red" style={{ display: "flex", flexWrap: "wrap" }}>
                                             {val.map((item, index) => {
 
-                                                if (item.includes("Location")) {
+                                                if (item.includes("Location") ) {
                                                     countLocation++
                                                     return (
                                                         <div key={index}
@@ -418,17 +499,17 @@ export default function Onboarding3() {
                                 {/* bg=red */}
                                 <Box display="flex" height="30px" style={{ marginTop: "50px", marginLeft: "-400px" }}>
                                     <Button className="backbutton"
-                                    fontSize="14px"
-                                    fontWeight="500px"
-                                    
+                                        fontSize="14px"
+                                        fontWeight="500px"
+
                                         style={{
-                                        
+
                                             width: "100px",
                                             height: "30px",
                                             borderRadius: "10px",
                                             variant: "outline !important",
                                             backgroundColor: "transparent ",
-                                            borderStyle:"solid",
+                                            borderStyle: "solid",
                                             borderColor: "#F9D88A", // set the border color to a solid color
                                             boxShadow: "none"
                                         }}
@@ -439,18 +520,18 @@ export default function Onboarding3() {
 
                                 </Box>
                                 {/* bg=green */}
-                                <Box  width={250} ml={400} mt={-30}>
+                                <Box width={250} ml={400} mt={-30}>
                                     <Button className="backbutton"
-                                    fontSize="14px"
-                                    fontWeight="500px"
-                                    onClick={handleProceed}
+                                        fontSize="14px"
+                                        fontWeight="500px"
+                                        onClick={handleProceed}
                                         style={{
                                             width: "110px",
                                             height: "30px",
                                             borderRadius: "12px",
                                             variant: "outline !important",
                                             backgroundColor: "transparent ",
-                                            borderStyle:"solid",
+                                            borderStyle: "solid",
                                             borderColor: "#F9D88A", // set the border color to a solid color
                                             boxShadow: "none"
                                         }}
@@ -458,21 +539,21 @@ export default function Onboarding3() {
                                         Skip this step
                                     </Button>
                                     <Button className="backbutton"
-                                    fontSize="14px"
-                                    fontWeight="500px"
-                                    onClick={handleProceed}
+                                        fontSize="14px"
+                                        fontWeight="500px"
+                                        onClick={handleProceed}
                                         style={{
-                                            marginLeft:"10px",
+                                            marginLeft: "10px",
                                             width: "100px",
                                             height: "30px",
                                             borderRadius: "12px",
                                             variant: "outline !important",
                                             backgroundColor: "transparent ",
                                             borderColor: "#F9D88A", // set the border color to a solid color
-                                            borderStyle:"solid",
+                                            borderStyle: "solid",
                                             boxShadow: "none"
                                         }}
-                                        
+
                                         rightIcon={<Image color="#110B03" src={forward} height="10px" ml="0px" />}
                                     >
                                         Proceed
@@ -493,7 +574,4 @@ export default function Onboarding3() {
         </>
     )
 }
-
-
-
 

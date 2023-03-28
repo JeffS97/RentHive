@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React, { useState } from 'react';
+import { BrowserRouter, BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { HomePage,  NotificationsPage} from "./routes";
 import { LoginPage } from "./routes"
 import { SignupPage } from "./routes";
@@ -6,14 +7,19 @@ import { OnboardingPage3 } from "./routes";
 import { OnboardingPage4 } from "./routes";
 import { ProfileCardPage } from "./routes";
 import { SearchPage } from "./routes";
-
-
+import {FilterlistPage}from "./routes";
+import { SavedPage } from "./routes";
 import Layout from "./layouts";
-
 import './App.css';
+import Onboarding3 from "./components/Onboarding3"
+
 
 function App() {
+  
+
   return (
+    <>
+
     <Router>
       <Layout>
         <Routes>
@@ -28,9 +34,13 @@ function App() {
           <Route path="/onboarding4" element={<OnboardingPage4 />} />
           <Route path="/profilecard" element={<ProfileCardPage />} />
           <Route path="/search" element={<SearchPage />} />
+          <Route path="/filterlist" element={<FilterlistPage />} />
+          <Route path="/saved" element={<SavedPage />} />
         </Routes>
       </Layout>
     </Router>
+
+    </>
   );
 }
 
