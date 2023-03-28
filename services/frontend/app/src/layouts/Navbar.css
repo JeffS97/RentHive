@@ -1,9 +1,12 @@
 .navbar {
+    width:100vw;
+    height:80px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     padding: 10px;
     background-color: #F9D88A;
+    border: 1px solid red;
   }
   
   .logo {
@@ -17,13 +20,13 @@
   
   .search-bar {
     margin-left: 8px;
+    border:1px solid blue;
   }
 
   .search-bar i {
-    position: absolute;
-    left: 235px;
-    top: 30px;
-    transform: translateY(-50%);
+    margin-left:10px;
+    margin-top:-100px;
+    z-index: 1;
   }
 
   .search-bar input {
@@ -40,6 +43,7 @@
   }
 
   .icons-container {
+    width:fill;
     display: flex;
   }
   

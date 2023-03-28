@@ -1,0 +1,16 @@
+.orange-tag{
+    width: 100px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #ED8713;
+    border-radius: 12px;
+}
+
+.orange-tag text{
+    font-size: 12px;
+    color: white;
+    font-weight: 500;
+}
