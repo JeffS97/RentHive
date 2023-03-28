@@ -29,18 +29,13 @@
     z-index: 1;
   }
 
-  .search-bar input {
-    border: none;
-    border-radius: 16px;
-    padding: 8px 16px;
-    width: 300px;
-    font-size: 16px;
-  }
+.logo img {
+  height: 40px;
+}
 
-  .search-bar input[type="text"] {
-    padding-left: 30px;
-    text-indent: 10px;
-  }
+.search-bar {
+  margin-left: 8px;
+}
 
   .icons-container {
     width:fill;

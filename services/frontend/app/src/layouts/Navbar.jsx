@@ -18,7 +18,7 @@ const handleClick = () => {
         <img src={Logo} alt="Logo" />
         <img src={RentHive} alt="RentHive" />
       </div>
-      <div className="search-bar">
+      {/* <div className="search-bar">
         <i className="fas fa-search"></i>
         <input style={{border:"1px solid green", zIndex:0}}className="search-text" type="text" placeholder="Search" >
         </input>
@@ -29,7 +29,7 @@ const handleClick = () => {
         <button onClick={handleClick} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px" }}><img src={SavedButton} alt="icon2" style={{ height: "30px"}} /></button>
         <button onClick={handleClick} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px"  }}><img src={NotificationButton} alt="icon3" style={{ height: "30px"}} /></button>
         <button onClick={handleClick} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer" }}><img src={UserIcon} alt="icon4" style={{ height: "30px" }} /></button>
-      </div>
+        </div>*/}
     </div>
   );
 };
