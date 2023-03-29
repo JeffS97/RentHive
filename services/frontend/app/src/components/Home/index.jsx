@@ -51,13 +51,14 @@ export default function Home() {
             width:"75%",
             // height: "187px"
             }}> 
-            <h1>Matched Roommates</h1>
+            {/* <h1>Matched Roommates</h1>
             <span style={{color:"#818181", fontWeight:"600"}}>
               <p>You have no matched roommates yet.
                 <br></br>
                 Click on the search bar to start matching now!
               </p>
-              <p></p></span>
+              <p></p></span> */}
+            <MatchedSection/>
             </div>
           
           </div>

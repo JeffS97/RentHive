@@ -77,7 +77,7 @@ const customStyles = {
 export default function Notifications() {
   const [receivedInvites, setReceivedInvites] = useState(initialReceivedInvites);
   const [sentInvites, setSentInvites] = useState(initialSentInvites);
-  
+
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
   const [modalText, setModalText] = useState("");
@@ -87,6 +87,7 @@ export default function Notifications() {
 
   const handleAcceptAll = () => {
     console.log('Accept All clicked');
+    localStorage.setItem("receivedInvites", JSON.stringify(receivedInvites));
     setIsOpen(true);
     setModalText("All Invites Accepted!");
     setReceivedInvites([]);
@@ -150,6 +151,7 @@ export default function Notifications() {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
+        ariaHideApp={false}
       >
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{modalText}</h2> 
         <button className="modalBtn" onClick={closeModal}>Close</button> 
