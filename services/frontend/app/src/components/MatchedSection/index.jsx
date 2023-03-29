@@ -30,26 +30,6 @@ export default function MatchedSection() {
             <br></br>
             Click on the search bar to start matching now!
             </p></span>}
-            
-            
-            
-            {/* <span style={{color:"#818181", fontWeight:"600"}}>
-              <p>You have no matched roommates yet.
-                <br></br>
-                Click on the search bar to start matching now!
-              </p></span>
-              {receivedInvites.map(item => (
-                <div key={item.id}>
-                  <p>{item.fullName}</p>
-                  <p>{item.age}</p>
-                  <p>{item.gender}</p>
-                  <p>{item.match}</p>
-                  <p>{item.common1}</p>
-                  <p>{item.common2}</p>
-                  <p>{item.details}</p>
-                  <img src={item.image}></img>
-                  </div>
-              ))} */}
       </div>
     );
   }
