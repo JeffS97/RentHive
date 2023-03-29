@@ -24,8 +24,6 @@ export default function Home() {
             padding: "32px",
             borderRadius:"16px",
             width: "75%",
-            // width:"1480px",
-            // height: "147px",
             marginTop:"40px",
             marginBottom: "42px",
             boxShadow: "0px 4px 4px #c0c0c0"
@@ -37,7 +35,6 @@ export default function Home() {
             padding: "40px",
             borderRadius:"16px",
             width:"75%",
-            // height: "723px",
             marginBottom:"42px"
           }}>
             <h1>Recommended Network Map</h1>
@@ -49,15 +46,7 @@ export default function Home() {
             padding: "40px",
             borderRadius:"16px",
             width:"75%",
-            // height: "187px"
             }}> 
-            {/* <h1>Matched Roommates</h1>
-            <span style={{color:"#818181", fontWeight:"600"}}>
-              <p>You have no matched roommates yet.
-                <br></br>
-                Click on the search bar to start matching now!
-              </p>
-              <p></p></span> */}
             <MatchedSection/>
             </div>
           
