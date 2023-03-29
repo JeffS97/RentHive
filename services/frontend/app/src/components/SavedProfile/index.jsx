@@ -43,7 +43,7 @@ import ProfileCard from "../ProfileCard"
 
 
 
-export default function Saved() {
+export default function SavedProfile() {
 
     const mySavedString = localStorage.getItem('mySaved');
     const mySaved = mySavedString ? JSON.parse(mySavedString) : [];

@@ -6,8 +6,11 @@ import OnboardingPage4 from "./Onboarding4";
 import ProfileCardPage from "./ProfileCard";
 import SearchPage from "./Search"
 import NotificationsPage from "./Notifications"
-import FilterlistPage from "./Filterlist"
-import SavedPage from "./Saved"
+import OnboardingPage1 from "./Onboarding1";
+import OnboardingPage2 from "./Onboarding2";
+import ProfilePage from "./Profile/Profile";
+import FilterlistPage from "./Filterlist";
+import SavedProfilePage from "./SavedProfile";
 
 
 export { HomePage };
@@ -19,4 +22,8 @@ export { ProfileCardPage }
 export { SearchPage }
 export { NotificationsPage }
 export { FilterlistPage }
-export { SavedPage }
+export { OnboardingPage1 };
+export { OnboardingPage2 };
+export { ProfilePage };
+export { SavedProfilePage };
+
