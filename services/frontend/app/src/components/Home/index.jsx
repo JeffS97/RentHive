@@ -1,9 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import NetworkMap from "../NetworkMap"
 import Navbar from "../Navbars/Navbar"
-import NavbarOnboarding from "../Navbars/NavbarOnboarding"
-import NavbarPrelogin from "../Navbars/NavbarPrelogin"
 import MatchedSection from "../MatchedSection"
 
 export default function Home() {
