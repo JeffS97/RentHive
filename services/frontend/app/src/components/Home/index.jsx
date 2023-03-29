@@ -30,7 +30,7 @@ export default function Home() {
             marginBottom: "42px",
             boxShadow: "0px 4px 4px #c0c0c0"
           }}> <h1>Hello, Angela!</h1>
-          <span style={{color:"#818181", fontWeight:"600", marginTop:"28px"}}>You currently have no notifications. Go out there and explore the world!</span>
+          <span style={{color:"#818181", fontWeight:"600", marginTop:"28px"}}>You have <b><a href="/notifications" style={{textDecoration:"none", color:"#818181"}}>2 unread pending invites</a></b>. How about saying hi?</span>
           </div>
           <div style={{
             background:"#ffffff",
