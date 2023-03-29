@@ -1,0 +1,12 @@
+.personname{
+    background: rgba(255, 255, 255, 0.5);
+    height:24px;
+    padding:4px;
+}
+
+.socialmap{
+    border-radius: 20px;
+    border: 1px solid transparent;
+    border-image: linear-gradient(45deg, rgb(209,161,37),rgb(56,141,219)) 1;
+
+}
