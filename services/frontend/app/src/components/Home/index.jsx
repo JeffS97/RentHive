@@ -1,10 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import NetworkMap from "../NetworkMap"
+import Navbar from "../Navbars/Navbar"
+import NavbarOnboarding from "../Navbars/NavbarOnboarding"
+import NavbarPrelogin from "../Navbars/NavbarPrelogin"
 import MatchedSection from "../MatchedSection"
 
 export default function Home() {
     return (
+      <div>
+      <Navbar/>
         <div style={{
           background: "#f5f5f5",
           display: "flex",
@@ -12,13 +17,15 @@ export default function Home() {
           alignItems: "center",
           height:"150vh"
           }}>
+            
           <div 
           style={{
             background:"#fef9ec",
-            paddingLeft: "32px",
+            padding: "32px",
             borderRadius:"16px",
-            width:"1480px",
-            height: "147px",
+            width: "75%",
+            // width:"1480px",
+            // height: "147px",
             marginTop:"40px",
             marginBottom: "42px",
             boxShadow: "0px 4px 4px #c0c0c0"
@@ -27,11 +34,10 @@ export default function Home() {
           </div>
           <div style={{
             background:"#ffffff",
-            paddingLeft: "40px",
-            paddingBottom: "80px",
+            padding: "40px",
             borderRadius:"16px",
-            width:"1480px",
-            height: "723px",
+            width:"75%",
+            // height: "723px",
             marginBottom:"42px"
           }}>
             <h1>Recommended Network Map</h1>
@@ -40,10 +46,10 @@ export default function Home() {
 
           <div style={{
             background:"#ffffff",
-            paddingLeft: "40px",
+            padding: "40px",
             borderRadius:"16px",
-            width:"1480px",
-            height: "187px"
+            width:"75%",
+            // height: "187px"
             }}> 
             <h1>Matched Roommates</h1>
             <span style={{color:"#818181", fontWeight:"600"}}>
@@ -54,6 +60,7 @@ export default function Home() {
               <p></p></span>
             </div>
           
+          </div>
           </div>
       );
 }

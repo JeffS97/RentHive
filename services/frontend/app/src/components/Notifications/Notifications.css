@@ -159,3 +159,15 @@
   .spacer {
     flex-grow: 1; /* Add flex-grow to create blank space */
   }
+
+  .modalBtn{
+    background-color: #f9d88a;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    padding:4px 2px 4px 2px;
+    border-radius:12px;
+    height:40px;
+    width:100%;
+    font-weight:700;
+  }

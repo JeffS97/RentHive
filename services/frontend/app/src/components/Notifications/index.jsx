@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import Modal from 'react-modal';
 import './Notifications.css';
+import Navbar from "../Navbars/Navbar"
 import { TiTick } from "react-icons/ti";
 import { RxCross2 } from "react-icons/rx";
 import { BiNoEntry } from "react-icons/bi";
@@ -10,7 +12,7 @@ import RandomPic from "../../img/ProfileFemale.png";
 
 
 // sample data
-const receivedInvites = [
+const initialReceivedInvites = [
   {
     id: 1,
     fullName: 'Celeste Hong',
@@ -35,7 +37,7 @@ const receivedInvites = [
   },
 ];
 
-const sentInvites = [
+const initialSentInvites = [
   {
     id: 1,
     fullName: 'Samuel Samson',
@@ -60,41 +62,98 @@ const sentInvites = [
   },
 ];
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    borderRadius: '4px'
+  },
+};
+
 export default function Notifications() {
+  const [receivedInvites, setReceivedInvites] = useState(initialReceivedInvites);
+  const [sentInvites, setSentInvites] = useState(initialSentInvites);
+  
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalText, setModalText] = useState("");
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   const handleAcceptAll = () => {
     console.log('Accept All clicked');
+    setIsOpen(true);
+    setModalText("All Invites Accepted!");
+    setReceivedInvites([]);
   };
 
   const handleRejectAll = () => {
     console.log('Reject All clicked');
+    setIsOpen(true);
+    setModalText("All Invites Rejected!");
+    setReceivedInvites([]);
   };
 
   const handleIgnoreAll = () => {
     console.log('Ignore All clicked');
+    setIsOpen(true);
+    setModalText("All Invites Ignored!");
+    setReceivedInvites([]);
   };
 
   const handleWithdrawAll = () => {
     console.log('Withdraw All clicked');
+    setIsOpen(true);
+    setModalText("All Invites Withdrawn!");
+    setSentInvites([]);
   };
 
   const handleAccept = (id) => {
     console.log(`Accept invite with ID ${id} clicked`);
+    setIsOpen(true);
+    setModalText("Invite Accepted!");
+    setReceivedInvites(receivedInvites.filter(invite => invite.id !== id));
   };
 
   const handleReject = (id) => {
     console.log(`Reject invite with ID ${id} clicked`);
+    setIsOpen(true);
+    setModalText("Invite Rejected!");
+    setReceivedInvites(receivedInvites.filter(invite => invite.id !== id));
   };
 
   const handleIgnore = (id) => {
     console.log(`Ignore invite with ID ${id} clicked`);
+    setIsOpen(true);
+    setModalText("Invite Ignored!");
+    setReceivedInvites(receivedInvites.filter(invite => invite.id !== id));
   };
 
   const handleWithdraw = (id) => {
     console.log(`Withdraw invite with ID ${id} clicked`);
+    setIsOpen(true);
+    setModalText("Invite Withdrawn!");
+    setSentInvites(sentInvites.filter(invite => invite.id !== id));
   };
 
   return (
+    <div>
+    <Navbar/>
     <div className="notifications">
+    <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>{modalText}</h2> 
+        <button className="modalBtn" onClick={closeModal}>Close</button> 
+      </Modal>
       <div className="received-invites">
       <h1>Notifications</h1>
       <div className="beepboop">
@@ -138,6 +197,7 @@ export default function Notifications() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }
