@@ -14,6 +14,7 @@ import Layout from "./layouts";
 
 import './App.css';
 import { SavedProfilePage } from "./routes";
+import {SelfProfile} from "./routes";
 
 
 function App() {
@@ -40,6 +41,8 @@ function App() {
           <Route path="/savedprofile" element={<SavedProfilePage />} />
           <Route path="/roommateprofile" element={<ProfilePage />} />
           <Route path="/mapline" element={<MapLinePage />} />
+          <Route path="/selfprofile" element={<SelfProfile />} />
+
         </Routes>
     </Router>
     </>

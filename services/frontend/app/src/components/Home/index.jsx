@@ -13,6 +13,7 @@ import stats from "../../img/stats.png"
 import tooltip from "../../img/Tooltip.png"
 
 export default function Home() {
+    const username = localStorage.getItem("myName").substring(1, localStorage.getItem("myName").length -1);
   return (
     <div>
       <Navbar />
@@ -33,7 +34,7 @@ export default function Home() {
             marginTop: "20px",
             marginBottom: "22px",
             boxShadow: "0px 4px 4px #c0c0c0"
-          }}> <h1>Hello, Angela!</h1>
+          }}> <h1>Hello, {username}!</h1>
           <span style={{ height: "10px", color: "#818181", fontWeight: "600", marginTop: "20px" }}>You have <b><a href="/notifications" style={{ textDecoration: "none", color: "#818181" }}>2 unread pending invites</a></b>. How about saying hi?</span>
         </div>
 

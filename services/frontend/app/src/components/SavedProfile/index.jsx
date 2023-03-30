@@ -44,9 +44,6 @@ import { HiOutlineSortDescending } from "react-icons/hi";
 import Navbar from "../Navbars/Navbar";
 
 
-
-
-
 export default function SavedProfile() {
 
     const [data, setData] = useState(require("./MOCK_DATA.json"));

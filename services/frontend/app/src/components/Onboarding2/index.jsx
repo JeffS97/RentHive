@@ -46,7 +46,7 @@ export default function Onboarding2() {
   };
 
   const handleProceed = () => {
-
+    localStorage.setItem("myDescription", description)
     navigate("/onboarding3");
 };
 

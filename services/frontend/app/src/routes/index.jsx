@@ -12,7 +12,7 @@ import ProfilePage from "./Profile/Profile";
 import FilterlistPage from "./Filterlist";
 import SavedProfilePage from "./SavedProfile";
 import MapLinePage from "./MapLine";
-
+import SelfProfile from "./SelfProfile";
 
 export { HomePage };
 export { LoginPage }
@@ -28,4 +28,5 @@ export { OnboardingPage2 };
 export { ProfilePage };
 export { SavedProfilePage };
 export { MapLinePage };
+export {SelfProfile};
 

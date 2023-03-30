@@ -46,6 +46,15 @@ import NavbarOnboarding from "../Navbars/NavbarOnboarding"
 export default function Onboarding1() {
     const navigate = useNavigate();
     const handleProceed = () => {
+        var myNameString = JSON.stringify(displayName);
+        localStorage.setItem('myName', myNameString);
+        console.log(myNameString)
+    
+        var myAgeString = JSON.stringify(age);
+        localStorage.setItem('myAge', myAgeString);
+    
+        var myGenderString = JSON.stringify(gender);
+        localStorage.setItem('myGender', myGenderString);
         navigate("/onboarding2");
     };
     // const history = useHistory();
@@ -93,22 +102,9 @@ export default function Onboarding1() {
     const [displayName, setDisplayName] = useState("")
     const [age, setAge] = useState("")
     const handleAgeChange = (e) => {
-        if (e.key === "Enter") {
-            setAge(e.target.value + " years");
-        }
+        setAge(e.target.value + " years");
     }
     const [gender, setGender] = useState("")
-
-
-    const myNameString = JSON.stringify(displayName);
-    localStorage.setItem('myName', myNameString);
-    console.log(myNameString)
-
-    const myAgeString = JSON.stringify(age);
-    localStorage.setItem('myAge', myAgeString);
-
-    const myGenderString = JSON.stringify(gender);
-    localStorage.setItem('myGender', myGenderString);
 
     return (
         <div>
@@ -208,7 +204,7 @@ export default function Onboarding1() {
                                                 fontSize='16px'
                                                 type="text"
                                                 outline='none'
-                                                onKeyDown={handleAgeChange}
+                                                onChange={handleAgeChange}
                                                 // onChange={(e)=>setAge(e.target.value)}
                                                 fontFamily='helvetica'
                                             // focusBorderColor="transparent"

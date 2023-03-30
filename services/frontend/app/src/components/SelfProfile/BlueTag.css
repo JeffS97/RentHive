@@ -1,0 +1,16 @@
+.blue-tag{
+    width: 100px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #0A6F94;
+    border-radius: 12px;
+}
+
+.blue-tag text{
+    font-size: 12px;
+    color: white;
+    font-weight: 500;
+}
