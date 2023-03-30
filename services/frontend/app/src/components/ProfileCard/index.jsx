@@ -62,7 +62,7 @@ export default function ProfileCard(props) {
     console.log(props);
 
     localStorage.setItem("profilename", name);
-    // navigate("/roommateprofile")
+    navigate("/roommateprofile")
   }
 
 
