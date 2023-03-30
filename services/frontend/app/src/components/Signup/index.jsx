@@ -19,6 +19,8 @@ import { Link, useNavigate } from "react-router-dom";
 import bigbee from ".//bigbee.png"
 import facebook from ".//facebook.png"
 import google from ".//google.png"
+import NavbarPrelogin from "../Navbars/NavbarPrelogin"
+
 
 
 
@@ -31,7 +33,10 @@ export default function Signup() {
   };
 
   return (
+    <>
+    <NavbarPrelogin text="Sign Up"/>
     <Flex>
+      
       <Box display="flex" justifyContent="center" width="60%" height="50%">
         <Image mt="70px" src={bigbee} alt="logo" width="60%" height="60%" />
       </Box>
@@ -207,5 +212,6 @@ export default function Signup() {
         </Stack>
       </Box>
     </Flex>
+    </>
   );
 }
