@@ -29,7 +29,7 @@ export default function Signup() {
   const navigate = useNavigate();
 
   const handleLogIn = () => {
-    navigate("/login");
+    navigate("/onboarding1");
   };
 
   return (

@@ -12,7 +12,7 @@ export default function NavbarPrelogin(props){
         navigate('/')
       }
       else{
-        navigate('/Signup');
+        navigate('/onboarding1');
       }
       
   }

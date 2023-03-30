@@ -34,6 +34,7 @@ import React, { useState } from "react";
 import { BsArrowRightShort, BsArrowLeftShort } from 'react-icons/bs';
 import ProfileCard from "../ProfileCard"
 import profilepic from "./profilepic.png"
+import NavbarOnboarding from "../Navbars/NavbarOnboarding"
 
 var data = require("../Onboarding3/MOCK_DATA.json")
 
@@ -136,6 +137,7 @@ export default function Onboarding2() {
 
   return (
     <div>
+      <NavbarOnboarding/>
       <Box ml="10px" height="550px" width="85%" display="flex" margin="auto" flexDirection="column">
         <Image mt="15px" src={progress} h='35' w='350px' mx="auto" />
         <Box w='1100px' h='80' mt="10px" alignItems="center">

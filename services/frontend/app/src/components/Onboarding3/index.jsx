@@ -27,6 +27,8 @@ import forward from ".//forward.png"
 import progressIndicator3 from ".//ProgressIndicator3.png"
 import { AiOutlineSearch } from "react-icons/ai";
 import Search from "../Search";
+import NavbarOnboarding from "../Navbars/NavbarOnboarding"
+
 var data = require("./MOCK_DATA.json")
 
 
@@ -157,7 +159,7 @@ export default function Onboarding3() {
 
     return (
         <>
-
+<NavbarOnboarding/>
             <Box  width="80%" display="flex" margin="auto" flexDirection="column" >
                 <Image src={progressIndicator3} mt="20px" height="90%" width="90%" ml="60px" mx="auto" />
 
