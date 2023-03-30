@@ -40,7 +40,7 @@ export default function Navbar(){
   
     return (
       <div className="navbar">
-        <div className="logo">
+        <div className="logo" onClick={()=>{navigate("/")}}>
           <img className="beelogo" src={Logo} alt="Logo" />
           <img className="renthivelogo" src={RentHive} alt="RentHive" />
         </div>
