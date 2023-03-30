@@ -12,7 +12,7 @@ export default function NavbarPrelogin(props){
         navigate('/login')
       }
       else{
-        navigate('/signup');
+        navigate('/Signup');
       }
       
   }
@@ -23,7 +23,7 @@ export default function NavbarPrelogin(props){
           <img className="renthivelogo" src={RentHive} alt="RentHive" />
         </div>
         <div className="spacer"></div>
-        <button className="inbutton" onClick={() => handleClick(props.text)}>
+        <button style={{fontSize:"15px", marginRight:"15px"}} className="inbutton" onClick={() => handleClick(props.text)}>
             {props.text}
         </button>
       </div>

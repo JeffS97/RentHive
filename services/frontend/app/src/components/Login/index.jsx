@@ -25,6 +25,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from ".//logo.png"
 import facebook from ".//facebook.png"
 import google from ".//google.png"
+import NavbarPrelogin from "../Navbars/NavbarPrelogin"
 
 
 export default function Login() {
@@ -39,9 +40,14 @@ export default function Login() {
     navigate("/Signup");
   };
 
+  const handeLogIn = () => {
+    navigate("/");
+  }
+
 
   return (
     <>
+    <NavbarPrelogin text="Sign up"/>
       <Flex>
         <Box ml="50px" mt="50px" display="flex" justifyContent="center" alignItems="center" height="80%" >
           <Image src={logo} alt="logo" width="70%" height="70%" mx="auto"/>
@@ -142,6 +148,7 @@ export default function Login() {
                       borderColor="transparent"
                       boxShadow="none"
                       borderRadius="10px"
+                      onClick={handeLogIn}
                     >
                       Log In
                     </Button>

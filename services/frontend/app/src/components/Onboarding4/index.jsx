@@ -29,6 +29,7 @@ import arrownext from ".//arrownext.png"
 import progressIndicator4 from ".//ProgressIndicator4.png"
 import back from ".//back.png"
 import {FiFacebook} from 'react-icons/fi';
+import NavbarOnboarding from "../Navbars/NavbarOnboarding"
 
 export default function Onboarding4() {
 
@@ -38,9 +39,14 @@ export default function Onboarding4() {
     navigate("/onboarding3");
   };
 
+  const handleFinishOnboard = () => {
+    navigate("/");
+  }
+
 
   return (
     <>
+    <NavbarOnboarding/>
       <Box width="80%" display="flex" margin="auto" flexDirection="column" >
       <Image  mt="20px" src={progressIndicator4} height="90%" width="90%" ml="45px" />
         <Heading
@@ -160,6 +166,7 @@ export default function Onboarding4() {
           color="#110B03"
           borderColor="transparent"
           borderRadius="10px"
+          onClick={handleFinishOnboard}
           rightIcon={<Image src={arrownext} height="80%" width="80%" ml="-2px" />}
         >
           Finish

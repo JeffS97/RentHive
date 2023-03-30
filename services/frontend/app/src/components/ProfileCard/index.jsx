@@ -41,21 +41,31 @@ export default function ProfileCard(props) {
   // const [bookmarked, setBookmarked] = useState(false);
 
 
-  const handleProceed = () => {
-    // setBookmarked(!bookmarked);
-    // props.handleSavedName(props.name);
-    if (!isSaved) {
-      props.handleSavedName(props.name);
+  const handleProceed = (e) => {
+    const isIcon = e.target.tagName.toLowerCase() === 'svg';
+
+    if (isIcon) {
+      if (!isSaved) {
+        props.handleSavedName(props.name);
+      } else {
+        props.handleRemoveName(props.name);
+      }
+      
     } else {
-      props.handleRemoveName(props.name);
+      navigate("/roommateprofile");
     }
   };
 
   
+  const handleViewProfile =()=>{
+    console.log("hello")
+    navigate("/roommateprofile")
+  }
+
 
   return (
     <>
-      <Box ml="8px" mt="30px" mr="5px" width="253.6px" height="343.2px">
+      <Box ml="8px" mt="30px" mr="5px" width="253.6px" height="343.2px"onClick={handleProceed} >
         <Box height="135.2px" width="253.6px" borderRadius="20px">
           <Image src={banner} height="100%" width="100%" />
           <Flex display="flex" flexDirection="column">
@@ -82,11 +92,11 @@ export default function ProfileCard(props) {
         </Box>
 
 
-        <Box bg="#FCEDC9" height="208px" width="253.6px"
+        <Box bg="#FCEDC9" height="208px" width="253.6px" onClick={handleViewProfile}
           borderBottomLeftRadius="20px" borderBottomRightRadius="20px"
           borderBottom="1px solid #000000">
           <Flex flexDirection="column" alignItems="center" >
-            <Text mt="29px" mb="0"
+            <Text mt="29px" mb="0" 
               fontSize="18px" fontWeight="600" color="#110B03">{props.name}</Text>
             <Text mt="-1px" mb="0"
               fontSize="13px" fontWeight="400" color="#4E4E4E">{props.age} • {props.gender}</Text>

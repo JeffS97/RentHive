@@ -41,6 +41,8 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { GrFilter } from "react-icons/gr"
 import ProfileCard from "../ProfileCard"
 import { HiOutlineSortDescending } from "react-icons/hi";
+import Navbar from "../Navbars/Navbar";
+
 
 
 
@@ -93,6 +95,7 @@ export default function SavedProfile() {
 
     return (
         <>
+        <Navbar/>
             <Box bg="#F5F5F5" mt="0px" padding="0px" height="100vh" width="100wh" display="flex"
                 flexDirection="column">
                 <Box bg="#FFFFFF" height="100vh" mt="20px" width="1150px" mx="auto" borderRadius="16px">
