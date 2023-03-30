@@ -40,14 +40,10 @@ import {
     
       return (
         <div className="navbar">
-          <div className="logo">
+          <div className="logo" onClick={()=>{navigate("/")}}>
             <img className="beelogo" src={Logo} alt="Logo" />
             <img className="renthivelogo" src={RentHive} alt="RentHive" />
           </div>
-          {/* <div className="search-bar">
-            <i  className="fas fa-search"></i>
-            <input className="search-text" type="text" placeholder="Search" />
-          </div> */}
           
           <div className="spacer"></div>
           <div className="icons-container">
