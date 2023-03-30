@@ -20,8 +20,8 @@ import {
   InputLeftAddon,
   filter, Menu, MenuButton, MenuList,
 } from '@chakra-ui/react';
-import { Link, useNavigate } from "react-router-dom";
-import React from "react";
+import { Link, useNavigate, useEffect } from "react-router-dom";
+import {React, useState} from "react";
 import './Profile.css';
 import wave from "../../img/wave.jpg";
 import profilePic from "../../img/JessicaProfilePic.png";
@@ -33,14 +33,15 @@ import pic5 from "../../img/JessicaPicture5.jpg";
 import pic6 from "../../img/JessicaPicture6.jpg";
 import pic7 from "../../img/JessicaPicture7.jpg";
 import pic8 from "../../img/JessicaPicture8.jpg";
-import { FiBookmark } from "react-icons/fi";
-import {BiSend} from "react-icons/bi";
 import {MdOutlineMoreVert} from "react-icons/md";
 import OrangeTag from "./OrangeTag";
 import BlueTag from "./BlueTag";
+import SaveUserButton from './SaveUserButton';
+import SendInviteButton from './SendInviteButton';
 import Navbar from '../Navbars/Navbar';
 
-export default function Profile() {
+export default function Profile({name}) {
+    console.log(localStorage.getItem("profilename"));
 
     return (
       <>
@@ -67,19 +68,10 @@ export default function Profile() {
                             </div>
 
                             <div className="profile-buttons-wrapper">
-                                <button className="yellow-profile-button-container" >
-                                    <FiBookmark/>
-                                    <text className="black-subtitle-text">
-                                        Save User
-                                    </text>
-                                </button>
+                                <SaveUserButton/>
 
-                                <button className="yellow-profile-button-container" >
-                                    <BiSend/>
-                                    <text className="black-subtitle-text">
-                                        Send Invite
-                                    </text>
-                                </button>
+                                <SendInviteButton/>
+
                                 <button className="transparent-profile-button-container">
                                     <MdOutlineMoreVert/>
                                 </button>
