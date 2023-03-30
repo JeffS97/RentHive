@@ -29,12 +29,15 @@ export default function Signup() {
   const navigate = useNavigate();
 
   const handleLogIn = () => {
-    navigate("/onboarding1");
+    navigate("/login");
   };
+  const handleSignUp=()=>{
+    navigate("/onboarding1")
+  }
 
   return (
     <>
-    <NavbarPrelogin text="Sign Up"/>
+    <NavbarPrelogin text="Log In"/>
     <Flex>
       
       <Box display="flex" justifyContent="center" width="60%" height="50%">
@@ -140,6 +143,7 @@ export default function Signup() {
                     borderColor="transparent"
                     boxShadow="none"
                     borderRadius="10px"
+                    onClick={handleSignUp}
                   >
                     Sign Up
                   </Button>

@@ -38,9 +38,13 @@ import {BiSend} from "react-icons/bi";
 import {MdOutlineMoreVert} from "react-icons/md";
 import OrangeTag from "./OrangeTag";
 import BlueTag from "./BlueTag";
+import Navbar from '../Navbars/Navbar';
 
 export default function Profile() {
+
     return (
+      <>
+      <Navbar/>
       <Box bg="#F0F0F0">
         <div className="grey-background">
             <div className="white-background">
@@ -207,5 +211,6 @@ export default function Profile() {
             </div>
         </div>
         </Box>
+        </>
       );
 }

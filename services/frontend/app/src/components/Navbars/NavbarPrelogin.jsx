@@ -9,10 +9,10 @@ export default function NavbarPrelogin(props){
 
   const handleClick = (path) => {
       if(path == 'Log In'){
-        navigate('/')
+        navigate('/login')
       }
       else{
-        navigate('/onboarding1');
+        navigate('/Signup');
       }
       
   }
