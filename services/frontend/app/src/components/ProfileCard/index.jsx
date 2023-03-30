@@ -52,7 +52,7 @@ export default function ProfileCard(props) {
       }
       
     } else {
-      navigate("/roommateprofile");
+      handleViewProfile(props.name);
     }
   };
 
