@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import './Notifications.css';
 import Navbar from "../Navbars/Navbar"
 import { TiTick } from "react-icons/ti";
-import { RxCross2 } from "react-icons/rx";
+import { RxCross2, RxTextAlignJustify } from "react-icons/rx";
 import { BiNoEntry } from "react-icons/bi";
 import { IoReturnUpBack } from "react-icons/io5";
 import FemalePic from "../../img/ProfileCeleste.png";
@@ -19,7 +19,7 @@ const initialReceivedInvites = [
     fullName: 'Celeste Hong',
     age: '22 years',
     gender: 'Female',
-    match:'91% Match',
+    match:'98% Match',
     common1: 'Bedok',
     common2: 'Early Bird',
     details: 'I’m a postgrad student from Korea that loves penguins and peaches! It would be a pleasure to meet you :)',
@@ -30,9 +30,9 @@ const initialReceivedInvites = [
     fullName: 'Jaden Smithe',
     age: '22 years',
     gender: 'Male',
-    match:'91% Match',
-    common1: 'Bedok',
-    common2: 'Early Bird',
+    match:'79% Match',
+    common1: 'Tampines',
+    common2: 'Night Owl',
     details: 'I’m a postgrad student from Korea that loves penguins and peaches! It would be a pleasure to meet you :)',
     image: Jungkook,
   },
@@ -46,7 +46,7 @@ const initialSentInvites = [
     gender: 'Male',
     match:'91% Match',
     common1: 'Bedok',
-    common2: 'Early Bird',
+    common2: 'Basketball',
     details: 'I’m a professional lawyer and enjoy taking long walks on the beach :) Hope to make friends with my roomie!',
     image: MalePic,
   },
@@ -55,7 +55,7 @@ const initialSentInvites = [
     fullName: 'Alice Williams',
     age: '22 years',
     gender: 'Female',
-    match:'91% Match',
+    match:'87% Match',
     common1: 'Bedok',
     common2: 'Early Bird',
     details: 'What’s up! I am an international student from America looking for someone to split rental costs with! I am an avid vegan.',
@@ -71,7 +71,8 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    borderRadius: '4px'
+    borderRadius: '12px',
+
   },
 };
 
@@ -171,7 +172,7 @@ export default function Notifications() {
         {receivedInvites.map((invite) => (
           <div className="card" key={invite.id} style={{ width: '970px', height: '100px' }}>
             <img src={invite.image} alt={invite.fullName} style={{ width: '90px', height: '86px' }} />
-            <span><p><span className="cardname">{invite.fullName}</span> <span className="cardagegender">{invite.age} • {invite.gender}</span> <span className="cardmatch">{invite.match}</span></p><p><span className="carddetails">{invite.details}</span></p><p><span className="cardcommon">You both have in common: </span><span className="cardcommonbadge1">{invite.common1}</span><span className="cardcommonbadge2"> {invite.common2} </span><span className="cardcommon">+ 2 more.</span></p></span>
+            <span><p><span className="cardname">{invite.fullName}</span> <span className="cardagegender">{invite.age} • {invite.gender}</span> <span className="cardmatch">{invite.match}</span></p><p><span className="carddetails" style={{fontSize:"15px"}} >{invite.details}</span></p><p><span className="cardcommon">You both have in common: </span><span className="cardcommonbadge1">{invite.common1}</span><span className="cardcommonbadge2"> {invite.common2} </span><span className="cardcommon">+ 2 more.</span></p></span>
             <div className="spacer"></div>
             <div className="card-buttons">
               <button className="selectbutton" onClick={() => handleAccept(invite.id)}><TiTick className="buttonicon"/>Accept</button>
@@ -191,7 +192,7 @@ export default function Notifications() {
         </div>
         </div>
         {sentInvites.map((invite) => (
-          <div className="card" key={invite.id}>
+          <div className="card" key={invite.id} style={{ width: '970px', height: '100px' }}>
             <img src={invite.image} alt={invite.fullName} style={{ width: '90px', height: '86px' }} />
             <span><p><span className="cardname">{invite.fullName}</span> <span className="cardagegender">{invite.age} • {invite.gender}</span> <span className="cardmatch">{invite.match}</span></p><p><span className="carddetails">{invite.details}</span></p><p><span className="cardcommon">You both have in common: </span><span className="cardcommonbadge1">{invite.common1}</span><span className="cardcommonbadge2"> {invite.common2} </span><span className="cardcommon">+ 2 more.</span></p></span>
             <div className="card-buttons">

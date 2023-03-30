@@ -36,6 +36,8 @@ export default function Navbar(){
   const handleClick = (path) => {
       navigate(path);
   }
+
+  
     return (
       <div className="navbar">
         <div className="logo">
@@ -56,6 +58,7 @@ export default function Navbar(){
               textAlign="flex-start"
               placeholder="Search"
               borderRadius="12px" borderColor="transparent" boxShadow="0px 2px 10px rgba(0, 0, 0, 0.2)" outline="none"
+              onClick={()=>handleClick('/search')}
             />
           </InputGroup>
         </Flex>
@@ -63,7 +66,7 @@ export default function Navbar(){
         <div className="icons-container">
           <div className="icons">
               <button onClick={()=>handleClick('/')} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px"  }}><img src={HomeButton} alt="icon1" style={{ height: "30px"}} /></button>
-              <button onClick={()=>handleClick('/')} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px" }}><img src={SavedButton} alt="icon2" style={{ height: "30px"}} /></button>
+              <button onClick={()=>handleClick('/savedprofile')} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px" }}><img src={SavedButton} alt="icon2" style={{ height: "30px"}} /></button>
               <button onClick={()=>handleClick('/notifications')} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px"  }}><img src={NotificationButton} alt="icon3" style={{ height: "30px"}} /></button>
               <button onClick={()=>handleClick('/')} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer" }}><img src={UserIcon} alt="icon4" style={{ height: "30px" }} /></button>
           </div>
