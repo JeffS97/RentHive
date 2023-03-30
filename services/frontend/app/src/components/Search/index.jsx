@@ -74,8 +74,10 @@ export default function Search() {
 
   // const [filterby, setFilterBy] = useState(["My ideal roommate"])
   const [filterby, setFilterBy] = useState([])
-
+  console.log("myArray: " + myArray);
+  console.log("myArray type: " + typeof(myArray));
   const tempOnboardFilter = [...myArray]
+
   console.log(tempOnboardFilter)
   // const tempOnboardFilter = ["basketball", "bedok"]
   const [onboardFilter, setOnboardFilter] = useState(tempOnboardFilter)
@@ -166,9 +168,9 @@ export default function Search() {
     setIsMenuOpen(false);
   }
 
-  const handleViewProfile =()=>{
-    console.log("hello")
-    navigate("/roommateprofile")
+  const handleViewProfile =(name)=>{
+    localStorage.setItem("profilename", name);
+    navigate("/roommateprofile");
   }
 
 
@@ -303,7 +305,7 @@ export default function Search() {
                 outline="none" borderRadius="12px" borderColor="transparent"
                 color="#000000" fontWeight="550" fontSize="11px" bg="#F5F5F5"
                 placeholder='Sort results by' icon={<></>} position="relative" onChange={handleSortChange}>
-                <option value='alphabetical' >Alphabetical</option>
+                <option value='alphabetical'>Alphabetical</option>
                 <option value='age' >Age</option>
                 <option value='percentage match' >Percentage Match</option>
               </Select>
@@ -313,7 +315,7 @@ export default function Search() {
 
         <Box  ml="100px" width="1070px" mt={filterby.length * 20} display="flex" flexDirection="row" flexWrap="wrap">
           {totalFilter.length > 0 ? (
-            <Box width="1200px" display="flex" flexDirection="row" flexWrap="wrap">
+            <Box width="1200px" display="flex" flexDirection="row" flexWrap="wrap" style={{border: "1px solid red"}}>
               {
                 data.map((item, index) => {
                   for (let i = 0; i < totalFilter.length; i++) {
@@ -326,7 +328,7 @@ export default function Search() {
                             tag1={item.tag1} tag2={item.tag2}  
                             handleSavedName={handleSavedName}
                             handleRemoveName={handleRemoveName}
-                            onClick={handleViewProfile}
+                            onClick={handleViewProfile(item.full_name)}
                             />
                         </>
                       )
@@ -336,7 +338,7 @@ export default function Search() {
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2}  more={item.more}
                            handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
-                           onClick={handleViewProfile}/>
+                           onClick={handleViewProfile(item.full_name)}/>
                       )
                     } else if (item.gender.toLowerCase().includes(totalFilter[i].toLowerCase())) {
                       return (
@@ -344,7 +346,7 @@ export default function Search() {
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2}   more={item.more}
                           handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
-                          onClick={handleViewProfile}/>
+                          onClick={handleViewProfile(item.full_name)}/>
 
                       )
                     } else if (item.tag1.toLowerCase().includes(totalFilter[i].toLowerCase())) {
@@ -353,7 +355,7 @@ export default function Search() {
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2} more={item.more}
                           handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
-                          onClick={handleViewProfile}/>
+                          onClick={handleViewProfile(item.full_name)}/>
                       )
                     } else if (item.tag2.toLowerCase().includes(totalFilter[i].toLowerCase())) {
                       return (
@@ -361,7 +363,7 @@ export default function Search() {
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2} more={item.more}
                           handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
-                          onClick={handleViewProfile}/>
+                          onClick={handleViewProfile(item.full_name)}/>
 
                       )
                     }
@@ -372,7 +374,7 @@ export default function Search() {
             </Box>
 
           ) : (
-            <Box ml="0px" mx="auto" display="flex" flexDirection="row" flexWrap="wrap">
+            <Box ml="0px" mx="auto" display="flex" flexDirection="row" flexWrap="wrap" >
               {data
 
                 .map((filterby, index) => (
@@ -387,7 +389,7 @@ export default function Search() {
                             tag1={filterby.tag1} tag2={filterby.tag2} more={filterby.more}
                              handleSavedName={handleSavedName}  
                              handleRemoveName={handleRemoveName}
-                             onClick={handleViewProfile}/>
+                             onClick={handleViewProfile(filterby.full_name)}/>
                              
                         </>
                       )
