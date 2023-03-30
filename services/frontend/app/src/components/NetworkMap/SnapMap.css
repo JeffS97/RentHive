@@ -1,4 +1,4 @@
-.personname{
+/* .personname{
     background: rgba(255, 255, 255, 0.5);
     height:24px;
     padding:4px;
@@ -8,5 +8,23 @@
     border-radius: 20px;
     border: 1px solid transparent;
     border-image: linear-gradient(45deg, rgb(209,161,37),rgb(56,141,219)) 1;
+} */
 
+.box {
+  position: absolute;
+  cursor: move;
+  color: black;
+  max-width: 215px;
+  border-radius: 5px;
+  padding: 1em;
+  margin: auto;
+  user-select: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  height: 300px;
+  color:black;
 }

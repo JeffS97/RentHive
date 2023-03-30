@@ -7,7 +7,8 @@
     "match": "91% Match",
     "icon": "/Profilepics/guy1.png",
     "tag1": "Bedok",
-    "tag2":"Early Bird"
+    "tag2":"Early Bird",
+    "more": "+2 more"
   },
   {
     "full_name": "Rice",
@@ -17,7 +18,8 @@
     "match": "89% Match",
     "icon": "/Profilepics/guy2.png",
     "tag1": "Tampines",
-    "tag2":"Night Owl"
+    "tag2":"Night Owl",
+    "more": "+2 more"
   },
   {
     "full_name": "Jerrica",
@@ -27,7 +29,8 @@
     "match": "75% Match",
     "icon": "/Profilepics/guy3.png",
     "tag1": "Basketball",
-    "tag2":"Musician"
+    "tag2":"Musician",
+    "more": "+3 more"
   },
   {
     "full_name": "Cass",
@@ -37,7 +40,8 @@
     "match": "56% Match",
     "icon": "/Profilepics/guy4.png",
     "tag1": "SengKang",
-    "tag2":"Dancing"
+    "tag2":"Dancing",
+    "more": "+1 more"
   },
   {
     "full_name": "Jeremy",
@@ -47,7 +51,8 @@
     "match": "98% Match",
     "icon": "/Profilepics/guy5.png",
     "tag1": "Bedok",
-    "tag2":"Horror movie"
+    "tag2":"Horror movie",
+    "more": "+4 more"
   },
   {
     "full_name": "Sammy",
@@ -57,7 +62,8 @@
     "match": "95% Match",
     "icon": "/Profilepics/guy6.png",
     "tag1": "Yishun",
-    "tag2":"K-pop"
+    "tag2":"K-pop",
+    "more": "+1 more"
   },
   {
     "full_name": "Sally",
@@ -67,7 +73,8 @@
     "match": "76% Match",
     "icon": "/Profilepics/guy7.png",
     "tag1": "Woodlands",
-    "tag2":"Dog lover"
+    "tag2":"Dog lover",
+    "more": "+2 more"
   },
   {
     "full_name": "Sheryl",
@@ -77,7 +84,8 @@
     "match": "47% Match",
     "icon": "/Profilepics/guy8.png",
     "tag1": "Kallang",
-    "tag2":"Photography"
+    "tag2":"Photography",
+    "more": "+3 more"
   },
   {
     "full_name": "Shawn",
@@ -87,7 +95,8 @@
     "match": "87% Match",
     "icon": "/Profilepics/guy9.png",
     "tag1": "Pasir ris",
-    "tag2":"Drinker"
+    "tag2":"Drinker",
+    "more": "+2 more"
   },
   {
     "full_name": "Shorty",
@@ -97,7 +106,8 @@
     "match": "69% Match",
     "icon": "/Profilepics/guy10.png",
     "tag1": "Yishun",
-    "tag2":"Anime"
+    "tag2":"Anime",
+    "more": "+1 more"
   },
   {
     "full_name": "Selene",
@@ -107,7 +117,8 @@
     "match": "79% Match",
     "icon": "/Profilepics/guy11.png",
     "tag1": "Marina Bay",
-    "tag2":"Drinker"
+    "tag2":"Drinker",
+    "more": "+2 more"
   },
   {
     "full_name": "Sarah",
@@ -117,7 +128,8 @@
     "match": "76% Match",
     "icon": "/Profilepics/guy12.png",
     "tag1": "Bedok",
-    "tag2":"Fencing"
+    "tag2":"Fencing",
+    "more": "+2 more"
   },
   {
     "full_name": "Rica",
@@ -127,7 +139,8 @@
     "match": "66% Match",
     "icon": "/Profilepics/guy13.png",
     "tag1": "Admiralty",
-    "tag2":"Dog Lover"
+    "tag2":"Dog Lover",
+    "more": "+5 more"
   },
   {
     "full_name": "Elaine",
@@ -137,7 +150,8 @@
     "match": "93% Match",
     "icon": "/Profilepics/guy14.png",
     "tag1": "Pasir ris",
-    "tag2":"Basketball"
+    "tag2":"Basketball",
+    "more": "+4 more"
   },
   {
     "full_name": "Esther",
@@ -147,7 +161,8 @@
     "match": "36% Match",
     "icon": "/Profilepics/guy15.png",
     "tag1": "Woodlands",
-    "tag2":"Gaming"
+    "tag2":"Gaming",
+    "more": "+5 more"
   },
   {
     "full_name": "Eevie",
@@ -157,7 +172,8 @@
     "match": "56% Match",
     "icon": "/Profilepics/guy16.png",
     "tag1": "Sembawang",
-    "tag2":"Dancing"
+    "tag2":"Dancing",
+    "more": "+3 more"
   },
   {
     "full_name": "Eklie",
@@ -167,7 +183,8 @@
     "match": "45% Match",
     "icon": "/Profilepics/guy17.png",
     "tag1": "Bras Basah",
-    "tag2":"Boxing"
+    "tag2":"Boxing",
+    "more": "+1 more"
   },
   {
     "full_name": "Dania",
@@ -177,7 +194,8 @@
     "match": "58% Match",
     "icon": "/Profilepics/guy18.png",
     "tag1": "Bedok",
-    "tag2":"K-pop"
+    "tag2":"K-pop",
+    "more": "+2 more"
   },
   {
     "full_name": "Daniella",
@@ -187,7 +205,8 @@
     "match": "63% Match",
     "icon": "/Profilepics/guy19.png",
     "tag1": "Woodlands",
-    "tag2":"Music"
+    "tag2":"Music",
+    "more": "+2 more"
   },
   {
     "full_name": "Damien",
@@ -197,7 +216,8 @@
     "match": "77% Match",
     "icon": "/Profilepics/guy20.png",
     "tag1": "Jurong",
-    "tag2":"Painting"
+    "tag2":"Painting",
+    "more": "+2 more"
   },
   {
     "full_name": "Dion",
@@ -207,7 +227,8 @@
     "match": "73% Match",
     "icon": "/Profilepics/guy21.png",
     "tag1": "Bishan",
-    "tag2":"Singing"
+    "tag2":"Singing",
+    "more": "+3 more"
   },
   {
     "full_name": "Desmond",
@@ -217,7 +238,8 @@
     "match": "82% Match",
     "icon": "/Profilepics/guy22.png",
     "tag1": "Bedok",
-    "tag2":"Dog lover"
+    "tag2":"Dog lover",
+    "more": "+1 more"
   },
   {
     "full_name": "Keyla",
@@ -227,7 +249,8 @@
     "match": "59% Match",
     "icon": "/Profilepics/guy23.png",
     "tag1": "Sembawang",
-    "tag2":"Music"
+    "tag2":"Music",
+    "more": "+1 more"
   },
   {
     "full_name": "Keran",
@@ -237,7 +260,8 @@
     "match": "62% Match",
     "icon": "/Profilepics/guy24.png",
     "tag1": "Kallang",
-    "tag2":"Gym"
+    "tag2":"Gym",
+    "more": "+2 more"
   },
   {
     "full_name": "Kelly",
@@ -247,7 +271,8 @@
     "match": "47% Match",
     "icon": "/Profilepics/guy25.png",
     "tag1": "Vivocity",
-    "tag2":"Eating"
+    "tag2":"Eating",
+    "more": "+3 more"
   },
   {
     "full_name": "Kloe",
@@ -257,7 +282,8 @@
     "match": "78% Match",
     "icon": "/Profilepics/guy26.png",
     "tag1": "Tampines",
-    "tag2":"Tap dance"
+    "tag2":"Tap dance",
+    "more": "+4 more"
   },
   {
     "full_name": "Kimmy",
@@ -267,7 +293,8 @@
     "match": "88% Match",
     "icon": "/Profilepics/guy27.png",
     "tag1": "Paya lebar",
-    "tag2":"Baking"
+    "tag2":"Baking",
+    "more": "+4 more"
   },
   {
     "full_name": "Kingsley",
@@ -277,7 +304,8 @@
     "match": "84% Match",
     "icon": "/Profilepics/guy28.png",
     "tag1": "Yishun",
-    "tag2":"Bayblade"
+    "tag2":"Bayblade",
+    "more": "+3 more"
   },
   {
     "full_name": "Kasie",
@@ -287,7 +315,8 @@
     "match": "60% Match",
     "icon": "/Profilepics/guy29.png",
     "tag1": "Admiralty",
-    "tag2":"Boxing"
+    "tag2":"Boxing",
+    "more": "+1 more"
   },
   {
     "full_name": "King",
@@ -297,6 +326,7 @@
     "match": "91% Match",
     "icon": "/Profilepics/guy30.png",
     "tag1": "Lakeside",
-    "tag2":"Garderning"
+    "tag2":"Garderning",
+    "more": "+2 more"
   }
 ]

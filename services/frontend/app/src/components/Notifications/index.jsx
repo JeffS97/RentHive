@@ -22,7 +22,7 @@ const initialReceivedInvites = [
     match:'98% Match',
     common1: 'Bedok',
     common2: 'Early Bird',
-    details: 'I’m a postgrad student from Korea that loves penguins and peaches! It would be a pleasure to meet you :)',
+    details: 'I’m a postgrad student from Korea, and I absolutely love penguins and peaches! It would be a pleasure to meet you :)',
     image: FemalePic,
   },
   {
@@ -33,7 +33,7 @@ const initialReceivedInvites = [
     match:'79% Match',
     common1: 'Tampines',
     common2: 'Night Owl',
-    details: 'I’m a postgrad student from Korea that loves penguins and peaches! It would be a pleasure to meet you :)',
+    details: 'I’m a a famous idol from South Korea, and I can melt even the coldest of hearts. It would be your pleasure to meet me :)',
     image: Jungkook,
   },
 ];
