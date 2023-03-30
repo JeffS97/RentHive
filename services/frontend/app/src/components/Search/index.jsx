@@ -43,6 +43,7 @@ import { HiOutlineSortDescending } from "react-icons/hi";
 import { GrFilter } from "react-icons/gr"
 import Filterlist from "../Filterlist"
 import Onboarding3 from '../Onboarding3';
+import NavbarSearch from "../Navbars/NavbarSearch";
 
 
 export default function Search() {
@@ -170,6 +171,7 @@ export default function Search() {
 
   return (
     <>
+        <NavbarSearch/>
       <Box bg="#F5F5F5" position="relative" zIndex="1" >
 
         <InputGroup position="absolute" zIndex="9" mt="19px" >

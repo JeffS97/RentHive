@@ -41,6 +41,7 @@ import React, { useState } from "react";
 import { BsArrowRightShort, BsQuestionCircle } from 'react-icons/bs';
 import { GrAdd } from 'react-icons/gr';
 import { IoIosAddCircleOutline } from 'react-icons/io';
+import NavbarOnboarding from "../Navbars/NavbarOnboarding"
 
 export default function Onboarding1() {
     const navigate = useNavigate();
@@ -111,6 +112,7 @@ export default function Onboarding1() {
 
     return (
         <div>
+            <NavbarOnboarding/>
             <Box>
                 <Box width="85%" height="550px" mx="auto">
                     <Box justifyContent='center' mt='14' display='flex'>
