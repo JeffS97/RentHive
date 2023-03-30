@@ -1,24 +1,5 @@
 import {
   Box,
-  FormControl,
-  FormLabel,
-  Input, InputLeftElement,
-  Stack,
-  Button,
-  IconButton,
-  Text,
-  Image,
-  Flex,
-  Select,
-  // FormErrorMessage,
-  Heading,
-  Icon,
-  InputGroup,
-  InputRightElement,
-  ChakraProvider,
-  useRangeSlider,
-  InputLeftAddon,
-  filter, Menu, MenuButton, MenuList,
 } from '@chakra-ui/react';
 import { Link, useNavigate, useEffect } from "react-router-dom";
 import {React, useState} from "react";
