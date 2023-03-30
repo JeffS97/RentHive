@@ -177,6 +177,8 @@ PROFILE HEADER
     gap: 4px;
 }
 
+/*button styles*/
+
 .yellow-profile-button-container{
     width: 128px;
     height: 40px;
@@ -189,6 +191,19 @@ PROFILE HEADER
     gap: 8px;
     border:none;
     
+}
+
+.outlined-profile-button-container{
+    width: 128px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    gap: 8px;
+    border: 2px solid #F9D88A;
 }
 
 .transparent-profile-button-container{
