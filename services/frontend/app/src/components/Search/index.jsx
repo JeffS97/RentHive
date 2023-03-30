@@ -180,7 +180,7 @@ export default function Search() {
         <NavbarSearch/>
       <Box bg="#F5F5F5" position="relative" zIndex="1" >
 
-        <InputGroup position="absolute" zIndex="9" mt="19px" >
+        <InputGroup position="absolute" zIndex="9" mt="19px" width="20px" >
           <Menu bg="#FFFFFF" >
             <MenuButton ml="875px"
               as={IconButton}
@@ -205,8 +205,8 @@ export default function Search() {
         </InputGroup>
 
         <Flex >
-          <InputGroup mt="10px" justifyContent="center">
-            <InputLeftElement mt="10px" ml="375px"
+          <InputGroup mt="10px" justifyContent="center" >
+            <InputLeftElement mt="10px" ml="375px" 
               pointerEvents="none"
               children={<AiOutlineSearch color="gray.300" />} />
             <Input width="500px" height="30px" pl="40px"

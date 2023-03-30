@@ -11,6 +11,7 @@ import OnboardingPage2 from "./Onboarding2";
 import ProfilePage from "./Profile/Profile";
 import FilterlistPage from "./Filterlist";
 import SavedProfilePage from "./SavedProfile";
+import MapLinePage from "./MapLine";
 
 
 export { HomePage };
@@ -26,4 +27,5 @@ export { OnboardingPage1 };
 export { OnboardingPage2 };
 export { ProfilePage };
 export { SavedProfilePage };
+export { MapLinePage };
 

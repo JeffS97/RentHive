@@ -8,6 +8,7 @@ import { OnboardingPage4 } from "./routes";
 import { ProfileCardPage } from "./routes";
 import { SearchPage } from "./routes";
 import {FilterlistPage}from "./routes";
+import { MapLinePage } from "./routes";
 import Layout from "./layouts";
 // import Layout from "./layouts";
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/filterlist" element={<FilterlistPage />} />
           <Route path="/savedprofile" element={<SavedProfilePage />} />
           <Route path="/roommateprofile" element={<ProfilePage />} />
+          <Route path="/mapline" element={<MapLinePage />} />
         </Routes>
     </Router>
     </>
