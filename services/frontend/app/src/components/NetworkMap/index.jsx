@@ -47,7 +47,7 @@ const SocialMap = () => {
   return (
     <div
       className="socialmap"
-      style={{ width: "1440px", height: "683px", background: "#f5f5f5"}}
+      style={{ width: "1005px", height: "683px", background: "#f5f5f5"}}
       onMouseDown={handleMouseDown}
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
@@ -69,7 +69,7 @@ const SocialMap = () => {
             alt={person.name}
             style={{
               position: "absolute",
-              left: `${person.x * 50 + 500}px`,
+              left: `${person.x * 50 + 400}px`,
               top: `${person.y * 50 + 10}px`,
               cursor: "pointer",
             }}
@@ -78,7 +78,7 @@ const SocialMap = () => {
           <p className="personname"
           style={{
               position: "absolute",
-              left: `${person.x * 50 + 500}px`,
+              left: `${person.x * 50 + 400}px`,
               top: `${person.y * 50 + 65}px`,
               cursor: "pointer",
             }}>{person.name}</p>

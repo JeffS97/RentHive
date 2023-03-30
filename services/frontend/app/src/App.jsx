@@ -9,19 +9,18 @@ import { ProfileCardPage } from "./routes";
 import { SearchPage } from "./routes";
 import {FilterlistPage}from "./routes";
 import Layout from "./layouts";
+// import Layout from "./layouts";
+
 import './App.css';
 import { SavedProfilePage } from "./routes";
 
 
-
 function App() {
-  
 
   return (
     <>
 
     <Router>
-      <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
@@ -40,7 +39,6 @@ function App() {
           <Route path="/savedprofile" element={<SavedProfilePage />} />
           <Route path="/roommateprofile" element={<ProfilePage />} />
         </Routes>
-      </Layout>
     </Router>
     </>
   );
