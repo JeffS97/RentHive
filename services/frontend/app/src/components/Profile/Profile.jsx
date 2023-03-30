@@ -1,3 +1,25 @@
+import {
+  Box,
+  FormControl,
+  FormLabel,
+  Input, InputLeftElement,
+  Stack,
+  Button,
+  IconButton,
+  Text,
+  Image,
+  Flex,
+  Select,
+  // FormErrorMessage,
+  Heading,
+  Icon,
+  InputGroup,
+  InputRightElement,
+  ChakraProvider,
+  useRangeSlider,
+  InputLeftAddon,
+  filter, Menu, MenuButton, MenuList,
+} from '@chakra-ui/react';
 import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import './Profile.css';
@@ -19,9 +41,9 @@ import BlueTag from "./BlueTag";
 
 export default function Profile() {
     return (
+      <Box bg="#F0F0F0">
         <div className="grey-background">
             <div className="white-background">
-
                 <div className="banner-container">
                     <img src={wave}>
                     </img>
@@ -184,5 +206,6 @@ export default function Profile() {
 
             </div>
         </div>
+        </Box>
       );
 }

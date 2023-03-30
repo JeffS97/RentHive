@@ -30,16 +30,18 @@ function App() {
           <Route path="/blstatus" element={<BLStatusPage />} /> */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/onboarding1" element={<OnboardingPage1 />} />
+          <Route path="/onboarding2" element={<OnboardingPage2/>} />
           <Route path="/onboarding3" element={<OnboardingPage3 />} />
           <Route path="/onboarding4" element={<OnboardingPage4 />} />
           <Route path="/profilecard" element={<ProfileCardPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/filterlist" element={<FilterlistPage />} />
           <Route path="/savedprofile" element={<SavedProfilePage />} />
+          <Route path="/roommateprofile" element={<ProfilePage />} />
         </Routes>
       </Layout>
     </Router>
-
     </>
   );
 }

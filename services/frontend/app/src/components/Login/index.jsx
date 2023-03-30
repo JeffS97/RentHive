@@ -43,8 +43,8 @@ export default function Login() {
   return (
     <>
       <Flex>
-        <Box display="flex" justifyContent="center" width="60%" height="50%">
-          <Image src={logo} alt="logo" width="60%" height="60%" />
+        <Box ml="50px" mt="50px" display="flex" justifyContent="center" alignItems="center" height="80%" >
+          <Image src={logo} alt="logo" width="70%" height="70%" mx="auto"/>
         </Box>
         <Box>
           <Stack mx="auto" px={6} py={12} spacing={20} w="md" align="center"
@@ -185,10 +185,12 @@ export default function Login() {
                         height="15px"
                         marginRight="2px"
                         cursor= "default"
+                        
                       >
                         Dont have an account?
                       </Text>
                       <button
+                      mt="10px"
                         style={{
                           backgroundColor: "transparent",
                           border: "none",

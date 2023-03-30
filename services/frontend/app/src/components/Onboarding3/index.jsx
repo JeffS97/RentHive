@@ -1,7 +1,7 @@
 import {
     Box,
     FormControl,
-    FormLabel,
+    FormLabel, Checkbox, CheckboxGroup,
     Input, InputLeftElement,
     Stack,
     Button,
@@ -54,7 +54,9 @@ var data = require("./MOCK_DATA.json")
 // localStorage.setItem('myArray', updatedArrayString);
 
 export default function Onboarding3() {
-
+    const myNameString = localStorage.getItem('myName');
+    const displayName = JSON.parse(myNameString);
+    console.log(displayName)
     var myArray = []
 
     const navigate = useNavigate();
@@ -64,8 +66,13 @@ export default function Onboarding3() {
         const myArrayString = JSON.stringify(onboardFilter);
         localStorage.setItem('myArray', myArrayString)
         console.log(myArray)
-        // navigate("/onboarding4");
+        navigate("/onboarding4");
     };
+
+    
+    const handleGoBack = () => {
+        navigate("/onboarding2");
+    }
 
     const [onboardFilter, setOnboardFilter] = useState([])
 
@@ -150,13 +157,16 @@ export default function Onboarding3() {
 
     return (
         <>
-            <Image src={progressIndicator3} mt="20px" height="90%" width="90%" ml="60px" />
-            <Box width="80%" display="flex" margin="auto" flexDirection="column" >
+
+            <Box  width="80%" display="flex" margin="auto" flexDirection="column" >
+                <Image src={progressIndicator3} mt="20px" height="90%" width="90%" ml="60px" mx="auto" />
+
                 <Heading
                     color="#110B03"
                     fontWeight="700"
                     fontSize="24px"
                     mb={-10}
+                    mt="20px"
 
                 >
                     Great! Here comes the fun part...
@@ -174,18 +184,18 @@ export default function Onboarding3() {
                 <Box width="60%" height="600px" margin="auto" display="flex" flexDirection="row">
                     <Stack flexDirection="column" >
                         <Stack width="70%">
-                            <Text color="#000000" fontWeight="600" fontSize="18px" mt={20} mb={0}>
+                            <Text color="#000000" fontWeight="700" fontSize="16px" mt={15} mb={0}>
                                 Roommate's information
                             </Text>
-                            <Text color="#6A6A6A" fontWeight="400" fontSize="16px">
+                            <Text color="#6A6A6A" fontWeight="400" fontSize="12px">
                                 State your preferred age and gender to room with.
                             </Text>
                         </Stack>
-                        <Stack width="70%" flexDirection="column" style={{ marginTop: "40px" }}>
-                            <Text color="#000000" fontWeight="600" fontSize="18px">
+                        <Stack width="70%" flexDirection="column" style={{ marginTop: "35px" }}>
+                            <Text color="#000000" fontWeight="700" fontSize="16px" mb="0px">
                                 Roommate's Additional Info
                             </Text>
-                            <Text color="#6A6A6A" fontWeight="400" fontSize="16px">
+                            <Text color="#6A6A6A" fontWeight="400" fontSize="12px">
                                 Match with your ideal location, traits and interests!
                             </Text>
                         </Stack>
@@ -194,7 +204,7 @@ export default function Onboarding3() {
 
                     {/* bg="aqua" */}
                     <Stack height="75%" width="65%" ml={-50} display="flex" flexDirection="column">
-                        <Stack mt={20}>
+                        <Stack mt={15}>
                             <FormControl display="flex" alignItems="center" height="40px">
                                 <Text color="#818181" fontWeight="600" fontSize="14px">Age range</Text>
                                 <Input type="number" width="35px" height="30px"
@@ -221,33 +231,34 @@ export default function Onboarding3() {
                                 <Button type="number" width="80px" height="30px"
                                     borderRadius="12px"
                                     borderColor="transparent"
-                                    style={{ backgroundColor: isClickedFemale ? '#F0F0F0' : '#F9D88A' }}
+                                    style={{ backgroundColor: isClickedFemale ? '#F9D88A' : '#F0F0F0' }}
                                     onClick={handleClickFemale}
                                     ml={50}>Female</Button>
                                 <Button type="number" width="70px" height="30px"
                                     borderRadius="12px"
                                     borderColor="transparent"
-                                    style={{ backgroundColor: isClickedMale ? '#F0F0F0' : '#F9D88A' }}
+                                    style={{ backgroundColor: isClickedMale ? '#F9D88A' : '#F0F0F0' }}
                                     onClick={handleClickMale}
                                     ml={10}>Male</Button>
                                 <Button type="number" width="70px" height="30px"
                                     borderRadius="12px"
                                     borderColor="transparent"
-                                    style={{ backgroundColor: isClickedOthers ? '#F0F0F0' : '#F9D88A' }}
+                                    style={{ backgroundColor: isClickedOthers ? '#F9D88A' : '#F0F0F0' }}
                                     onClick={handleClickOthers}
                                     ml={10}>Others</Button>
 
                             </FormControl>
                         </Stack >
                         <Stack >
-                            <Box style={{ marginTop: "40px" }} display="flex" alignItems="center">
+                            {/* <Box style={{ marginTop: "15px" }} display="flex" alignItems="center">
                                 <Text color="#110B03" fontWeight="600" fontSize="18px" mt={0}>Filters</Text>
-                                <Text color="#5A5A5A" fontWeight="500" fontSize="12px" mt={0} ml={50}>Select traits of my ideal roommate</Text>
-                            </Box>
-                            <Box style={{ marginTop: "0px" }}>
+                                <Text colorScheme='red' color="#5A5A5A" fontWeight="500" fontSize="12px" mt="-1px" ml={50}>Select traits of my ideal roommate</Text>
+                                <Input marginLeft="-205px" mt="-10px" type="checkbox"></Input>
+                            </Box> */}
+                            <Box style={{ marginTop: "20px" }}>
 
                                 <Flex >
-                                    <InputGroup mt="10px" >
+                                    <InputGroup mt="0px" >
                                         <InputLeftElement mt="5px" ml="12px"
                                             pointerEvents="none"
                                             children={<AiOutlineSearch color="gray.300" />} />
@@ -255,46 +266,20 @@ export default function Onboarding3() {
                                             height="28px" width="450px" pl="40px"
                                             borderRadius="12px" borderColor="transparent"
                                             outline="none"
-                                            bg="#FEF9EC"
                                             type="search"
-
                                             disabled={false}
                                             value={value}
                                             placeholder="  Search filters..."
                                             color=" #5A5A5A"
+                                            bg='#F0F0F0'
                                             fontStyle="italic"
                                             fontWeight="400"
                                             fontSize="12px"
                                             onChange={handleValueChange}
-                                            // onKeyDown={handleKeyPress}
-                                             />
+                                        // onKeyDown={handleKeyPress}
+                                        />
                                     </InputGroup>
                                 </Flex>
-
-                                {/* 
-                                <div style={{ position: "relative" }}>
-                                    <input
-                                        style={{
-                                            backgroundColor: "#FEF9EC", height: "28px", width: "200px",
-                                            marginLeft: "20px", borderRadius: "12px", borderColor: "transparent"
-                                        }}
-                                        type="search"
-
-                                        disabled={false}
-                                        value={value}
-                                        placeholder="  Search filters..."
-                                        color=" #5A5A5A"
-                                        fontStyle="italic"
-                                        fontWeight="400"
-                                        fontSize="12px"
-                                        onChange={handleValueChange}
-                                        onKeyDown={handleKeyPress}
-                                    />
-                                    <Image src={search} alt="logo"
-                                        style={{ position: "absolute", top: "50%", left: "0px", transform: "translateY(-50%)" }} />
-
-
-                                </div> */}
 
                                 <div >
                                     <div style={{
@@ -337,7 +322,29 @@ export default function Onboarding3() {
                                                                 alignItems: "center",
 
                                                             }}>
-                                                            <Text
+                                                            <Box display="flex" flexDirection="row"
+                                                                minWidth="fit-content" p="0 6px" height="25px"
+                                                                //to toggle different colours for filter chips
+                                                                // bg={item=="My ideal roommate" ? "#ED8713" : "#0A6F94" } 
+                                                                bg="#0A6F94"
+
+                                                                borderRadius="12px" mr="5px" flexWrap="wrap" mt="10px"
+                                                            >
+                                                                <Text color="#FFFFFF" ml="14px" pr="2px"
+                                                                    fontSize="14px"
+                                                                    fontWeight="500" mt="2px"
+
+                                                                >{item}</Text>
+                                                                <button style={{
+                                                                    background: 'transparent', borderColor: 'transparent',
+                                                                    color: "#FFFFFF", margin: "0 0 10px"
+                                                                }}
+                                                                    onClick={() => handleDelete(index)}
+                                                                >x
+                                                                </button>
+                                                            </Box>
+
+                                                            {/* <Text
                                                                 ml={countInterests % 3 == 0 ? 0 : 15}
                                                                 mt={countInterests >= 3 ? 0 : 12}
 
@@ -363,7 +370,7 @@ export default function Onboarding3() {
                                                                 }}
                                                                 onClick={() => handleDelete(index)}
                                                             >x
-                                                            </button>
+                                                            </button> */}
                                                         </div>
                                                     )
                                                 }
@@ -395,7 +402,29 @@ export default function Onboarding3() {
                                                                 alignItems: "center",
 
                                                             }}>
-                                                            <Text
+                                                            <Box display="flex" flexDirection="row"
+                                                                minWidth="fit-content" p="0 6px" height="25px"
+                                                                //to toggle different colours for filter chips
+                                                                // bg={item=="My ideal roommate" ? "#ED8713" : "#0A6F94" } 
+                                                                bg="#0A6F94"
+
+                                                                borderRadius="12px" mr="5px" flexWrap="wrap" mt="10px"
+                                                            >
+                                                                <Text color="#FFFFFF" ml="14px" pr="2px"
+                                                                    fontSize="14px"
+                                                                    fontWeight="500" mt="2px"
+
+                                                                >{item}</Text>
+                                                                <button style={{
+                                                                    background: 'transparent', borderColor: 'transparent',
+                                                                    color: "#FFFFFF", margin: "0 0 10px"
+                                                                }}
+                                                                    onClick={() => handleDelete(index)}
+                                                                >x
+                                                                </button>
+                                                            </Box>
+
+                                                            {/* <Text
                                                                 ml={countTraits % 3 == 0 ? 0 : 15}
                                                                 mt={countTraits >= 3 ? 0 : 12}
 
@@ -421,7 +450,7 @@ export default function Onboarding3() {
                                                                 }}
                                                                 onClick={() => handleDelete(index)}
                                                             >x
-                                                            </button>
+                                                            </button> */}
                                                         </div>
                                                     )
                                                 }
@@ -446,7 +475,7 @@ export default function Onboarding3() {
                                         <div bg="red" style={{ display: "flex", flexWrap: "wrap" }}>
                                             {val.map((item, index) => {
 
-                                                if (item.includes("Location") ) {
+                                                if (item.includes("Location")) {
                                                     countLocation++
                                                     return (
                                                         <div key={index}
@@ -456,7 +485,55 @@ export default function Onboarding3() {
                                                                 alignItems: "center",
 
                                                             }}>
-                                                            <Text
+                                                                <Box display="flex" flexDirection="row"
+                                                                minWidth="fit-content" p="0 6px" height="25px"
+                                                                //to toggle different colours for filter chips
+                                                                // bg={item=="My ideal roommate" ? "#ED8713" : "#0A6F94" } 
+                                                                bg="#0A6F94"
+
+                                                                borderRadius="12px" mr="5px" flexWrap="wrap" mt="10px"
+                                                            >
+                                                                <Text color="#FFFFFF" ml="14px" pr="2px"
+                                                                    fontSize="14px"
+                                                                    fontWeight="500" mt="2px"
+
+                                                                >{item}</Text>
+                                                                <button style={{
+                                                                    background: 'transparent', borderColor: 'transparent',
+                                                                    color: "#FFFFFF", margin: "0 0 10px"
+                                                                }}
+                                                                    onClick={() => handleDelete(index)}
+                                                                >x
+                                                                </button>
+                                                            </Box>
+                                                                {/* <Text
+                                                                ml={countLocation % 3 == 0 ? 0 : 15}
+                                                                mt={countLocation >= 3 ? 0 : 12}
+
+                                                                bg="#0A6F94"
+                                                                color="#F5F5F5"
+                                                                width="140px"
+                                                                height="25px"
+                                                                fontSize="13px"
+                                                                fontWeight="500"
+                                                                borderRadius="12px"
+                                                                style={{
+                                                                    display: "flex",
+                                                                    justifyContent: "center",
+                                                                    textAlign: "center",
+                                                                    alignItems: "center"
+                                                                }}
+                                                                key={index}>{item}</Text> */}
+                                                            <button
+                                                                style={{
+                                                                    marginTop: countLocation <= 2 ? '-px' : '-12px', marginLeft: '-25px', width: '25px',
+                                                                    height: '25px', background: 'transparent', borderColor: 'transparent',
+                                                                    color: "#F5F5F5"
+                                                                }}
+                                                              onClick={() => handleDelete(index)}
+                                                            >x
+                                                            </button>
+                                                            {/* <Text
                                                                 ml={countLocation % 3 == 0 ? 0 : 15}
                                                                 mt={countLocation >= 3 ? 0 : 12}
 
@@ -482,7 +559,7 @@ export default function Onboarding3() {
                                                                 }}
                                                                 onClick={() => handleDelete(index)}
                                                             >x
-                                                            </button>
+                                                            </button> */}
                                                         </div>
                                                     )
                                                 }
@@ -497,13 +574,12 @@ export default function Onboarding3() {
 
                                 </Box>
                                 {/* bg=red */}
-                                <Box display="flex" height="30px" style={{ marginTop: "50px", marginLeft: "-400px" }}>
+                                <Box display="flex" height="30px" style={{ marginTop: "20px", marginLeft: "-400px" }}>
                                     <Button className="backbutton"
                                         fontSize="14px"
                                         fontWeight="500px"
-
+                                        onClick={handleGoBack}
                                         style={{
-
                                             width: "100px",
                                             height: "30px",
                                             borderRadius: "10px",
@@ -548,7 +624,7 @@ export default function Onboarding3() {
                                             height: "30px",
                                             borderRadius: "12px",
                                             variant: "outline !important",
-                                            backgroundColor: "transparent ",
+                                            backgroundColor: "#F9D88A",
                                             borderColor: "#F9D88A", // set the border color to a solid color
                                             borderStyle: "solid",
                                             boxShadow: "none"

@@ -33,7 +33,7 @@ export default function Signup() {
   return (
     <Flex>
       <Box display="flex" justifyContent="center" width="60%" height="50%">
-        <Image src={bigbee} alt="logo" width="60%" height="60%" />
+        <Image mt="70px" src={bigbee} alt="logo" width="60%" height="60%" />
       </Box>
       <Box>
         <Stack mx="auto" px={6} py={12} spacing={20} w="md" align="center"
@@ -136,7 +136,7 @@ export default function Signup() {
                     boxShadow="none"
                     borderRadius="10px"
                   >
-                    Log In
+                    Sign Up
                   </Button>
                   <Button
                     width="400px"

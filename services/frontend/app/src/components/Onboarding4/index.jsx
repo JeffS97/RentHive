@@ -41,8 +41,8 @@ export default function Onboarding4() {
 
   return (
     <>
-      <Image  mt="20px" src={progressIndicator4} height="90%" width="90%" ml="60px" />
       <Box width="80%" display="flex" margin="auto" flexDirection="column" >
+      <Image  mt="20px" src={progressIndicator4} height="90%" width="90%" ml="45px" />
         <Heading
           color="#110B03"
           fontWeight="700"
@@ -166,6 +166,7 @@ export default function Onboarding4() {
         </Button>
       </Box>
       <Button 
+      mt="70px"
         ml="130px"
         fontSize="14px"
         fontWeight="500px"

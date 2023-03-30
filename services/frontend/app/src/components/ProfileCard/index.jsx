@@ -90,13 +90,14 @@ export default function ProfileCard(props) {
               fontSize="18px" fontWeight="600" color="#110B03">{props.name}</Text>
             <Text mt="-1px" mb="0"
               fontSize="13px" fontWeight="400" color="#4E4E4E">{props.age} • {props.gender}</Text>
-
-            <Text ml="20px" mr="20px" mt="7" mb="-10"
+              
+            <Text ml="20px" mr="20px" mt="7" mb="-10"  display="flexWrap" width="210px"
+            style={{overflowWrap: 'break-word'}}
               fontSize="13px" fontWeight="400" color="#110B03">{props.bio} </Text>
             <Text alignSelf="flex-start" mt="43px" mb="0px" ml="20px"
               fontSize="12px" fontWeight="400" color="#4E4E4E">You both have in common:</Text>
           </Flex>
-          <Box display="flex" justifyContent="flex-start" height="25px" ml="20">
+          <Box display="flex" justifyContent="flex-start" height="25px" ml="20" position="absolute">
             <Flex width="100%">
               <Text mt="12px"
                 width="85.6px" height="20px" bg="#ED8713" fontWeight="600" fontSize="11px" color="#F5F5F5"
@@ -110,7 +111,7 @@ export default function ProfileCard(props) {
               >{props.tag2}</Text>
 
               <Text display="flex" justifyContent="center" alignItems="center"
-                ml="4px" color="#4E4E4E" fontSize="10px" fontWeight="400px"> + 2 more.</Text>
+                ml="4px" color="#4E4E4E" fontSize="10px" fontWeight="400px">{props.more}</Text>
             </Flex>
           </Box>
         </Box>

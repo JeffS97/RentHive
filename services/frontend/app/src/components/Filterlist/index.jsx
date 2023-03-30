@@ -120,7 +120,8 @@ export default function Filterlist({ callback }) {
         <>
             <Box display="flex" flexDirection="column" height="430px" borderRadius="12px"
                 width="1006px" bg="#FFFFFF" mt="0px">
-                <Text style={{ fontWeight: "600", fontSize: 20, color: "#110B03", marginLeft: 32 }}>Filters</Text>
+                <Text style={{ fontWeight: "600", fontSize: 20, color: "#110B03", marginLeft: 32 }}>Trending Filters</Text>
+                
 
                 <Box display="flex" mt="-30px" ml="32px">
                     <Box display="flex" flexDirection="column" >

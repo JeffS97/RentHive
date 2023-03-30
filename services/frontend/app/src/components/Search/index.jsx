@@ -184,7 +184,7 @@ export default function Search() {
               onClick={() => setIsMenuOpen(true)}
 
             />
-            <MenuList mt="10px" ml="-740px">
+            <MenuList mt="65px" ml="-740px">
 
               <Box width="1000px" display="flex" >
                 {isMenuOpen && (
@@ -204,7 +204,7 @@ export default function Search() {
             <Input width="500px" height="30px" pl="40px"
               type="text"
               textAlign="flex-start"
-              placeholder="Filter for your ideal roommate"
+              placeholder="Search here for your ideal roommate"
               value={query}
               borderRadius="12px" borderColor="transparent" boxShadow="0px 2px 10px rgba(0, 0, 0, 0.2)" outline="none"
               onChange={handleQueryChange}
@@ -326,14 +326,14 @@ export default function Search() {
                       return (
                         <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                           bio={item.bio} match={item.match} icon={item.icon}
-                          tag1={item.tag1} tag2={item.tag2}  
+                          tag1={item.tag1} tag2={item.tag2}  more={item.more}
                            handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}/>
                       )
                     } else if (item.gender.toLowerCase().includes(totalFilter[i].toLowerCase())) {
                       return (
                         <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                           bio={item.bio} match={item.match} icon={item.icon}
-                          tag1={item.tag1} tag2={item.tag2}   
+                          tag1={item.tag1} tag2={item.tag2}   more={item.more}
                           handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}/>
 
                       )
@@ -341,14 +341,14 @@ export default function Search() {
                       return (
                         <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                           bio={item.bio} match={item.match} icon={item.icon}
-                          tag1={item.tag1} tag2={item.tag2}  
+                          tag1={item.tag1} tag2={item.tag2} more={item.more}
                           handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}/>
                       )
                     } else if (item.tag2.toLowerCase().includes(totalFilter[i].toLowerCase())) {
                       return (
                         <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                           bio={item.bio} match={item.match} icon={item.icon}
-                          tag1={item.tag1} tag2={item.tag2}  
+                          tag1={item.tag1} tag2={item.tag2} more={item.more}
                           handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}/>
 
                       )
@@ -372,7 +372,7 @@ export default function Search() {
 
                           <ProfileCard name={filterby.full_name} age={filterby.age} gender={filterby.gender}
                             bio={filterby.bio} match={filterby.match} icon={filterby.icon}
-                            tag1={filterby.tag1} tag2={filterby.tag2} 
+                            tag1={filterby.tag1} tag2={filterby.tag2} more={filterby.more}
                              handleSavedName={handleSavedName}  
                              handleRemoveName={handleRemoveName}/>
                         </>
