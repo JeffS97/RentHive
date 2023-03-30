@@ -48,9 +48,9 @@
   
  .card {
     display: flex;
-    justify-content: space-between;
+    
     align-items: center;
-    padding: 20px;
+    padding: 25px;
     background-color: #fcedc9;
     margin-bottom: 10px;
   }
@@ -117,6 +117,8 @@
   .cardname{
     font-weight:700;
     font-size:20px;
+    margin-top: 1000px;
+
   }
 
   .cardagegender{
@@ -126,28 +128,30 @@
   }
 
   .cardmatch{
-    margin-left:20px;
     border-radius:12px;
     background-color: #27ca68;
-    padding:6px;
+    padding:3px 14px 3px 14px ;
+    margin-left:20px;
     width: 63px;
     height:16px;
+    font-weight: 500;
     font-size:12px;
   }
 
   .cardcommon{
     color:#625555;
     font-size:12px;
+    margin-left: 5px;
   }
 
   .cardcommonbadge1, .cardcommonbadge2{
-    min-width:111px;
-    min-height:25px;
+    width:170px;
+    height:25px;
     background-color: #ed8713;
-    border-radius:16px;
+    border-radius:12px;
     color:white;
-    padding:6px;
-    margin-right:5px;
+    padding:3px 14px 3px 14px ;
+    margin-left:6px;
     font-size:12px;
   }
   
@@ -158,4 +162,16 @@
 
   .spacer {
     flex-grow: 1; /* Add flex-grow to create blank space */
+  }
+
+  .modalBtn{
+    background-color: #f9d88a;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    padding:4px 2px 4px 2px;
+    border-radius:12px;
+    height:40px;
+    width:100%;
+    font-weight:700;
   }

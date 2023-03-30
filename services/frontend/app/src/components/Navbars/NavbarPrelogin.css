@@ -1,0 +1,44 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    background-color: #F9D88A;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .beelogo {
+    height: 48px;
+    min-width: 40px;
+  }
+
+  .renthivelogo {
+    height: 34px;
+    min-width:123px;
+    margin-top:8px;
+    margin-left:4px;
+    margin-right: 32px;
+  }
+
+  .icons-container {
+    display: flex;
+  }
+
+
+  .spacer {
+    flex-grow: 1; /* Add flex-grow to create blank space */
+  }
+
+  .inbutton{
+    background-color:#00b4e0;
+    color:white;
+    border: none;
+    padding:4px 2px 4px 2px;
+    border-radius:12px;
+    height:40px;
+    width:95px;
+  }

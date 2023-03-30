@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import Logo from "../img/Icon.png"
 import RentHive from "../img/RentHive.png"
@@ -7,29 +8,31 @@ import SavedButton from "../img/SavedButton.png"
 import NotificationButton from "../img/NotificationButton.png"
 import UserIcon from "../img/UserIcon.png"
 
-export default function Navbar(){
+// export default function Navbar(){
+//   const navigate = useNavigate();
 
-const handleClick = () => {
-    console.log("clicked");
-}
-  return (
-    <div className="navbar">
-      <div className="logo">
-        <img src={Logo} alt="Logo" />
-        <img src={RentHive} alt="RentHive" />
-      </div>
-      {/* <div className="search-bar">
-        <i className="fas fa-search"></i>
-        <input style={{border:"1px solid green", zIndex:0}}className="search-text" type="text" placeholder="Search" >
-        </input>
-      </div>
-      <div className="spacer"></div>
-      <div className="icons-container">
-        <button onClick={handleClick} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px"  }}><img src={HomeButton} alt="icon1" style={{ height: "30px"}} /></button>
-        <button onClick={handleClick} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px" }}><img src={SavedButton} alt="icon2" style={{ height: "30px"}} /></button>
-        <button onClick={handleClick} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px"  }}><img src={NotificationButton} alt="icon3" style={{ height: "30px"}} /></button>
-        <button onClick={handleClick} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer" }}><img src={UserIcon} alt="icon4" style={{ height: "30px" }} /></button>
-        </div>*/}
-    </div>
-  );
-};
+//   const handleClick = (path) => {
+//       navigate(path);
+//   }
+//     return (
+//       <div className="navbar">
+//         <div className="logo">
+//           <img className="beelogo" src={Logo} alt="Logo" />
+//           <img className="renthivelogo" src={RentHive} alt="RentHive" />
+//         </div>
+//         <div className="search-bar">
+//           <i className="fas fa-search"></i>
+//           <input className="search-text" type="text" placeholder="Search" />
+//         </div>
+//         <div className="spacer"></div>
+//         <div className="icons-container">
+//           <div className="icons">
+//               <button onClick={()=>handleClick('/')} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px"  }}><img src={HomeButton} alt="icon1" style={{ height: "30px"}} /></button>
+//               <button onClick={()=>handleClick('/')} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px" }}><img src={SavedButton} alt="icon2" style={{ height: "30px"}} /></button>
+//               <button onClick={()=>handleClick('/notifications')} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer", marginRight: "20px"  }}><img src={NotificationButton} alt="icon3" style={{ height: "30px"}} /></button>
+//               <button onClick={()=>handleClick('/')} style={{ border: "none", backgroundColor: "transparent", cursor:"pointer" }}><img src={UserIcon} alt="icon4" style={{ height: "30px" }} /></button>
+//           </div>
+//         </div>
+//       </div>
+//     );
+// };
