@@ -47,7 +47,7 @@ export default function Login() {
 
   return (
     <>
-    <NavbarPrelogin text="Log In"/>
+    <NavbarPrelogin text="Sign up"/>
       <Flex>
         <Box ml="50px" mt="50px" display="flex" justifyContent="center" alignItems="center" height="80%" >
           <Image src={logo} alt="logo" width="70%" height="70%" mx="auto"/>

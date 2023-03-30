@@ -35,7 +35,7 @@ import {
   PopoverAnchor,
   propNames,
 } from '@chakra-ui/react';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
 import ProfileCard from "../ProfileCard"
 import { AiOutlineSearch } from "react-icons/ai";
@@ -47,7 +47,7 @@ import NavbarSearch from "../Navbars/NavbarSearch";
 
 
 export default function Search() {
-
+  const navigate = useNavigate();
 // THIS PORTION IS TO SAVE PROFILECARD
   const [saved, setSaved] = useState([])
 
@@ -166,6 +166,10 @@ export default function Search() {
     setIsMenuOpen(false);
   }
 
+  const handleViewProfile =()=>{
+    console.log("hello")
+    navigate("/roommateprofile")
+  }
 
 
 
@@ -321,7 +325,9 @@ export default function Search() {
                             bio={item.bio} match={item.match} icon={item.icon}
                             tag1={item.tag1} tag2={item.tag2}  
                             handleSavedName={handleSavedName}
-                            handleRemoveName={handleRemoveName} />
+                            handleRemoveName={handleRemoveName}
+                            onClick={handleViewProfile}
+                            />
                         </>
                       )
                     } else if (item.age.toLowerCase().includes(totalFilter[i].toLowerCase())) {
@@ -329,14 +335,16 @@ export default function Search() {
                         <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2}  more={item.more}
-                           handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}/>
+                           handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
+                           onClick={handleViewProfile}/>
                       )
                     } else if (item.gender.toLowerCase().includes(totalFilter[i].toLowerCase())) {
                       return (
                         <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2}   more={item.more}
-                          handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}/>
+                          handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
+                          onClick={handleViewProfile}/>
 
                       )
                     } else if (item.tag1.toLowerCase().includes(totalFilter[i].toLowerCase())) {
@@ -344,14 +352,16 @@ export default function Search() {
                         <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2} more={item.more}
-                          handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}/>
+                          handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
+                          onClick={handleViewProfile}/>
                       )
                     } else if (item.tag2.toLowerCase().includes(totalFilter[i].toLowerCase())) {
                       return (
                         <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2} more={item.more}
-                          handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}/>
+                          handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
+                          onClick={handleViewProfile}/>
 
                       )
                     }
@@ -376,7 +386,9 @@ export default function Search() {
                             bio={filterby.bio} match={filterby.match} icon={filterby.icon}
                             tag1={filterby.tag1} tag2={filterby.tag2} more={filterby.more}
                              handleSavedName={handleSavedName}  
-                             handleRemoveName={handleRemoveName}/>
+                             handleRemoveName={handleRemoveName}
+                             onClick={handleViewProfile}/>
+                             
                         </>
                       )
                     }
