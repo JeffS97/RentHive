@@ -319,7 +319,6 @@ export default function Search() {
               {
                 data.map((item, index) => {
                   for (let i = 0; i < totalFilter.length; i++) {
-
                     if (item.full_name.toLowerCase().includes(totalFilter[i].toLowerCase())) {
                       return (
                         <>

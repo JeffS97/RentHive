@@ -71,7 +71,7 @@ export default function Onboarding3() {
         navigate("/onboarding4");
     };
 
-    
+
     const handleGoBack = () => {
         navigate("/onboarding2");
     }
@@ -159,8 +159,8 @@ export default function Onboarding3() {
 
     return (
         <>
-<NavbarOnboarding/>
-            <Box  width="80%" display="flex" margin="auto" flexDirection="column" >
+            <NavbarOnboarding />
+            <Box width="80%" display="flex" margin="auto" flexDirection="column" >
                 <Image src={progressIndicator3} mt="20px" height="90%" width="90%" ml="60px" mx="auto" />
 
                 <Heading
@@ -257,10 +257,15 @@ export default function Onboarding3() {
                                 <Text colorScheme='red' color="#5A5A5A" fontWeight="500" fontSize="12px" mt="-1px" ml={50}>Select traits of my ideal roommate</Text>
                                 <Input marginLeft="-205px" mt="-10px" type="checkbox"></Input>
                             </Box> */}
-                            <Box style={{ marginTop: "20px" }}>
-
+                            <Box >
+                                <Box mt="17px" mb="15px" height="20px" display="flex" alignItems="center">
+                                    <Text fontSize="18px" fontWeight="600" >Filters</Text>
+                                    <input style={{marginLeft:"20px", marginTop:"4px"}} type="checkbox"></input>
+                                    <Text ml="3px" color="#5A5A5A" fontSize="12px" fontWeight="500" >Match my chosen traits</Text>
+                                </Box>
                                 <Flex >
-                                    <InputGroup mt="0px" >
+
+                                    <InputGroup >
                                         <InputLeftElement mt="5px" ml="12px"
                                             pointerEvents="none"
                                             children={<AiOutlineSearch color="gray.300" />} />
@@ -487,7 +492,7 @@ export default function Onboarding3() {
                                                                 alignItems: "center",
 
                                                             }}>
-                                                                <Box display="flex" flexDirection="row"
+                                                            <Box display="flex" flexDirection="row"
                                                                 minWidth="fit-content" p="0 6px" height="25px"
                                                                 //to toggle different colours for filter chips
                                                                 // bg={item=="My ideal roommate" ? "#ED8713" : "#0A6F94" } 
@@ -508,7 +513,7 @@ export default function Onboarding3() {
                                                                 >x
                                                                 </button>
                                                             </Box>
-                                                                {/* <Text
+                                                            {/* <Text
                                                                 ml={countLocation % 3 == 0 ? 0 : 15}
                                                                 mt={countLocation >= 3 ? 0 : 12}
 
@@ -532,7 +537,7 @@ export default function Onboarding3() {
                                                                     height: '25px', background: 'transparent', borderColor: 'transparent',
                                                                     color: "#F5F5F5"
                                                                 }}
-                                                              onClick={() => handleDelete(index)}
+                                                                onClick={() => handleDelete(index)}
                                                             >x
                                                             </button>
                                                             {/* <Text

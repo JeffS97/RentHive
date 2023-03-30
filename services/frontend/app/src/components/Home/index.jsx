@@ -12,27 +12,29 @@ export default function Home() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          height:"150vh"
+          height:"100%"
           }}>
             
           <div 
           style={{
             background:"#fef9ec",
-            padding: "32px",
+            padding: "10px 38px 30px 38px",
             borderRadius:"16px",
             width: "75%",
-            marginTop:"40px",
-            marginBottom: "42px",
+            marginTop:"20px",
+            marginBottom: "22px",
             boxShadow: "0px 4px 4px #c0c0c0"
           }}> <h1>Hello, Angela!</h1>
-          <span style={{color:"#818181", fontWeight:"600", marginTop:"28px"}}>You have <b><a href="/notifications" style={{textDecoration:"none", color:"#818181"}}>2 unread pending invites</a></b>. How about saying hi?</span>
+          <span style={{height:"10px", color:"#818181", fontWeight:"600", marginTop:"20px"}}>You have <b><a href="/notifications" style={{textDecoration:"none", color:"#818181"}}>2 unread pending invites</a></b>. How about saying hi?</span>
           </div>
+
           <div style={{
             background:"#ffffff",
-            padding: "40px",
+            padding: "10px 48px 30px 38px",
             borderRadius:"16px",
             width:"75%",
-            marginBottom:"42px"
+            marginBottom:"42px",
+            boxShadow: "0px 4px 4px #c0c0c0"
           }}>
             <h1>Recommended Network Map</h1>
             <NetworkMap/>
@@ -43,6 +45,7 @@ export default function Home() {
             padding: "40px",
             borderRadius:"16px",
             width:"75%",
+            boxShadow: "0px 4px 4px #c0c0c0"
             }}> 
             <MatchedSection/>
             </div>
