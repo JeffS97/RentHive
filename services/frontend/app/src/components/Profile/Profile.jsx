@@ -40,7 +40,8 @@ import SaveUserButton from './SaveUserButton';
 import SendInviteButton from './SendInviteButton';
 import Navbar from '../Navbars/Navbar';
 
-export default function Profile() {
+export default function Profile({name}) {
+    console.log(localStorage.getItem("profilename"));
 
     return (
       <>
