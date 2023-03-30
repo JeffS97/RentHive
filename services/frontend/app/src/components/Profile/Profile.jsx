@@ -5,7 +5,6 @@ import { Link, useNavigate, useEffect } from "react-router-dom";
 import {React, useState} from "react";
 import './Profile.css';
 import wave from "../../img/wave.jpg";
-import profilePic from "../../img/JessicaProfilePic.png";
 import pic1 from "../../img/JessicaPicture1.png";
 import pic2 from "../../img/JessicaPicture2.jpg";
 import pic3 from "../../img/JessicaPicture3.jpg";
@@ -20,9 +19,28 @@ import BlueTag from "./BlueTag";
 import SaveUserButton from './SaveUserButton';
 import SendInviteButton from './SendInviteButton';
 import Navbar from '../Navbars/Navbar';
+import users from "./MOCK_DATA.json";
+// import profilepic from "../../../public/Profilepics/guy2.png";
 
 export default function Profile({name}) {
-    console.log(localStorage.getItem("profilename"));
+    /*-------------------------------
+    GETTING USER DATA (Stored as user)
+    --------------------------------*/
+    var user = [];
+    //we know what user to display because when profilecard is clicked, 
+    //it passes the profilename to localstorage
+    const profilename = localStorage.getItem('profilename');
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].full_name == profilename) {
+            user = users[i];
+            console.log(user);
+        }
+    }
+    /*-------------------------------------
+    PATH FORMATTING FOR GETTING PROFILE PIC
+    --------------------------------------*/
+    const profilePicPath = "../../../public" + JSON.stringify(user.icon).substring(1, JSON.stringify(user.icon).length-1);
+    console.log(profilePicPath);
 
     return (
       <>
@@ -38,14 +56,14 @@ export default function Profile({name}) {
                 <div className="profile-header-main-info-and-buttons">
                     <div className="profile-header-top-row">
                         <div className="profile-picture-container">
-                            <img src={profilePic}></img>
+                            <img src={user.icon}></img>
                         </div>
 
                         <div className="name-age-gender-buttons-wrapper">
                             
                             <div className="name-age-gender-wrapper">
-                                <text className="title-text" style={{lineHeight:"28px"}}>Jessica Jameson</text>
-                                <text className="grey-subtitle-text" style={{lineHeight:"28px"}}>24 years • Female</text>
+                                <text className="title-text" style={{lineHeight:"28px"}}>{user.full_name}</text>
+                                <text className="grey-subtitle-text" style={{lineHeight:"28px"}}>{user.age} • {user.gender}</text>
                             </div>
 
                             <div className="profile-buttons-wrapper">
@@ -64,28 +82,26 @@ export default function Profile({name}) {
                         <div className="social-media-detail">
                             <i class="fa-brands fa-telegram" />
                             <text className="grey-subtitle-text">
-                                @JessyJ
+                                {"@TeleMe!_" + user.full_name}
                             </text>
                         </div>
                         <div className="social-media-detail">
                             <i class="fa-brands fa-instagram" />
                             <text className="grey-subtitle-text">
-                                @JessyJami
+                                {"@InstaTime_" + user.full_name}
                             </text>
                         </div>
                         <div className="social-media-detail">
                             <i class="fa-brands fa-facebook" />
                             <text className="grey-subtitle-text">
-                                facebook.com/doublej
+                                {"facebook.com/" + user.full_name}
                             </text> 
                         </div>
                     </div>
 
                     <div className="profile-header-description">
                         <text className="black-subtitle-text">
-                            What’s up! I am an international student from America looking for someone to split rental costs with! 
-                            I am an avid vegan. 
-                            I am hoping to help local animal welfare groups by fostering cats when I move in :) 
+                            {user.bio} 
                         </text>
                     </div>
 
@@ -125,7 +141,7 @@ export default function Profile({name}) {
                     </text>
                   </div>
                   <div className="location-tags">
-                    <OrangeTag name="Bedok"/>
+                    <OrangeTag name={"" + user.tag1}/>
                     <BlueTag name="Tanah Merah"/>
                     <BlueTag name="Pasir Ris"/>
                   </div>
@@ -146,7 +162,7 @@ export default function Profile({name}) {
                     </text>
                   </div>
                   <div className="interests-tags">
-                    <OrangeTag name="Cooking"/>
+                    <OrangeTag name={"" + user.tag2}/>
                     <OrangeTag name="Music"/>
                     <BlueTag name="Painting"/>
                     <BlueTag name="Dancing"/>

@@ -7,7 +7,7 @@
       "match": "91% Match",
       "icon": "/Profilepics/guy1.png",
       "tag1": "Bedok",
-      "tag2":"Early Bird",
+      "tag2":"Music",
       "more": "+2 more"
     },
     {
@@ -18,7 +18,7 @@
       "match": "89% Match",
       "icon": "/Profilepics/guy2.png",
       "tag1": "Tampines",
-      "tag2":"Night Owl",
+      "tag2":"Cooking",
       "more": "+2 more"
     },
     {
@@ -28,8 +28,8 @@
       "bio": "I’m an exchange student from Korea that works hard and plays hard. I have a degree in Broadcasting and...",
       "match": "75% Match",
       "icon": "/Profilepics/guy3.png",
-      "tag1": "Basketball",
-      "tag2":"Musician",
+      "tag1": "Braddell",
+      "tag2":"Music",
       "more": "+3 more"
     },
     {
@@ -326,7 +326,7 @@
       "match": "91% Match",
       "icon": "/Profilepics/guy30.png",
       "tag1": "Lakeside",
-      "tag2":"Garderning",
+      "tag2":"Gardening",
       "more": "+2 more"
     }
   ]
