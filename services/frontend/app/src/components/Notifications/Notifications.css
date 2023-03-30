@@ -33,24 +33,26 @@
     display: flex;
     justify-content: end;
     margin-bottom: 20px;
+    width:380px;
+
   }
 
   .transparent-btn {
+    font-weight:600;
     background-color: transparent;
     border-color:#fcedc9;
-    border-radius: 6px;
+    border-radius: 12px;
     border-style: solid;
-    width:130px;
-    height:40px;
-    margin-left:20px;
+    width:120px;
+    height:30px;
+    margin-left:10px;
     cursor: pointer;
   }
   
  .card {
     display: flex;
-    
     align-items: center;
-    padding: 25px;
+    padding: 28px;
     background-color: #fcedc9;
     margin-bottom: 10px;
   }
@@ -65,29 +67,33 @@
   .received-invites .card-buttons, .sent-invites .card-buttons {
     display: flex;
     justify-content: space-between;
+    
   }
   
   .received-invites .card button {
-    padding: 10px;
+    padding: 0px;
+    margin-left:20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     color: black;
     font-weight: bold;
     cursor: pointer;
-    width:107px;
-    height: 40px;
+    width:95px;
+    height: 30px;
+    margin-right: -10px;
   }
 
  .sent-invites .card button {
-    padding: 10px;
+    padding: 0px;
+    margin-left:20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 12px;
     color: black;
     font-weight: bold;
     cursor: pointer;
-    width:107px;
-    height: 40px;
-    margin-right:20px;
+    width:115px;
+    height: 30px;
+    margin-right:-10px;
   }
 
   .card {
@@ -109,7 +115,7 @@
 
   .sectionheader{
     color: #625555;
-    font-size:20px;
+    font-size:18px;
     font-weight:700;
   }
 
@@ -156,7 +162,8 @@
   }
   
   .buttonicon{
-    margin-right:10px;
+    margin-left:-5px;
+    margin-right:5px;
     height:10px;
   }
 
