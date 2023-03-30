@@ -165,17 +165,6 @@ export default function Search() {
     setFilterBy(updatedlist)
     setIsMenuOpen(false);
   }
-
-<<<<<<< Updated upstream
-  const handleViewProfile =()=>{
-    console.log("hello")
-    navigate("/roommateprofile")
-  }
-
-
-
-=======
->>>>>>> Stashed changes
   return (
     <>
     <NavbarSearch/>
@@ -329,11 +318,7 @@ export default function Search() {
                             tag1={item.tag1} tag2={item.tag2}  
                             handleSavedName={handleSavedName}
                             handleRemoveName={handleRemoveName}
-<<<<<<< Updated upstream
-                            onClick={handleViewProfile}
-=======
                         
->>>>>>> Stashed changes
                             />
                         </>
                       )
@@ -343,11 +328,7 @@ export default function Search() {
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2}  more={item.more}
                            handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
-<<<<<<< Updated upstream
-                           onClick={handleViewProfile}/>
-=======
                         />
->>>>>>> Stashed changes
                       )
                     } else if (item.gender.toLowerCase().includes(totalFilter[i].toLowerCase())) {
                       return (
@@ -355,11 +336,7 @@ export default function Search() {
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2}   more={item.more}
                           handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
-<<<<<<< Updated upstream
-                          onClick={handleViewProfile}/>
-=======
                         />
->>>>>>> Stashed changes
 
                       )
                     } else if (item.tag1.toLowerCase().includes(totalFilter[i].toLowerCase())) {
@@ -368,11 +345,7 @@ export default function Search() {
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2} more={item.more}
                           handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
-<<<<<<< Updated upstream
-                          onClick={handleViewProfile}/>
-=======
                         />
->>>>>>> Stashed changes
                       )
                     } else if (item.tag2.toLowerCase().includes(totalFilter[i].toLowerCase())) {
                       return (
@@ -380,11 +353,7 @@ export default function Search() {
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2} more={item.more}
                           handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
-<<<<<<< Updated upstream
-                          onClick={handleViewProfile}/>
-=======
                         />
->>>>>>> Stashed changes
 
                       )
                     }
@@ -410,11 +379,7 @@ export default function Search() {
                             tag1={filterby.tag1} tag2={filterby.tag2} more={filterby.more}
                              handleSavedName={handleSavedName}  
                              handleRemoveName={handleRemoveName}
-<<<<<<< Updated upstream
-                             onClick={handleViewProfile}/>
-=======
                             />
->>>>>>> Stashed changes
                              
                         </>
                       )

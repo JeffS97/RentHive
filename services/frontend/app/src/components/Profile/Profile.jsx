@@ -41,9 +41,6 @@ import Navbar from '../Navbars/Navbar';
 import users from "./MOCK_DATA.json";
 // import profilepic from "../../../public/Profilepics/guy2.png";
 
-<<<<<<< Updated upstream
-export default function Profile() {
-=======
 export default function Profile({name}) {
     /*-------------------------------
     GETTING USER DATA (Stored as user)
@@ -63,7 +60,6 @@ export default function Profile({name}) {
     --------------------------------------*/
     const profilePicPath = "../../../public" + JSON.stringify(user.icon).substring(1, JSON.stringify(user.icon).length-1);
     console.log(profilePicPath);
->>>>>>> Stashed changes
 
     return (
       <>
