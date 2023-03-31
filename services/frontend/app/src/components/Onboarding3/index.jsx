@@ -290,7 +290,7 @@ export default function Onboarding3() {
                                             />
                                         </InputGroup>
                                     </Flex>
-                                    /</Flex>
+                                    </Flex>
 
 
 
