@@ -70,6 +70,7 @@ export default function Onboarding3() {
         localStorage.setItem('myArray', myArrayString)
         console.log(myArray)
         navigate("/onboarding4");
+        console.log("helps")
     };
 
 
