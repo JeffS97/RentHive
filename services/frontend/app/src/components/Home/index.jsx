@@ -5,7 +5,7 @@ import {
 
 } from '@chakra-ui/react';
 
-import {React, useEffect} from "react";
+import {React, useEffect, useState} from "react";
 import NetworkMap from "../NetworkMap"
 import Navbar from "../Navbars/Navbar"
 import MatchedSection from "../MatchedSection"
@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
     const navigate = useNavigate();
-    let username = "";
+    const [username, setUsername] = useState("")
     useEffect(() => {
         const myName = localStorage.getItem("myName");
         console.log(myName);
@@ -24,7 +24,9 @@ export default function Home() {
             console.log("Navigating to login page...");
             navigate("/signup");
         } else {
-            username = myName.substring(1, localStorage.getItem("myName").length -1);
+            setUsername(myName.substring(1, localStorage.getItem("myName").length -1));
+            console.log("username: " + username);
+            console.log(username === "")
         }
     })
 

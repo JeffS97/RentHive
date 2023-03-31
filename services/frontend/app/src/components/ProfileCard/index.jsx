@@ -32,9 +32,12 @@ export default function ProfileCard(props) {
 
   const mySavedString = localStorage.getItem('mySaved');
   const mySaved = JSON.parse(mySavedString);
-  console.log(mySaved)
-
-  const isSaved = mySaved.includes(props.name);
+  console.log(mySaved);
+  let isSaved = "";
+  if (mySaved === null || mySaved === "null") {
+  } else {
+    isSaved = mySaved.includes(props.name);
+  }
 
   // const isBookmarked = false;
 
