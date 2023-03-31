@@ -1,35 +1,47 @@
+import {
+  Box,
+  FormControl, FormLabel,
+  Input,
+  Stack,
+  Button, IconButton,
+  Text, Image, Badge,
+  Flex,
+
+} from '@chakra-ui/react';
 import React, { useState, useEffect, useRef } from "react";
 import MapMe from "../../img/MapMe.png"
 import MapSam from "../../img/MapSam.png"
 import MapBen from "../../img/MapBen.png"
 import './SnapMap.css'
 import Draggable from 'react-draggable';
-import { Box, Flex } from '@chakra-ui/react';
+import MapLine from "../MapLine"
+import hardmap1 from "../../img/hardmap1.png"
 
 const SocialMap = () => {
-  const gridWidth = 700;
-  const gridHeight = 400;
-  const boxSize = gridWidth/3;
+  const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
 
-  const bounds = {
-    left: boxSize-gridWidth,
-    top: boxSize-gridHeight,
-    right: gridWidth - boxSize,
-    bottom: gridHeight - boxSize,
-  }
+  // }
   return (
     <>
-    <Box w={`${gridWidth}px`} h={`${gridHeight}px`} border="1px solid black">
-      <Flex w="100%" h="100%" wrap="wrap">
-        <Draggable bounds={bounds}>
-          <Box w={`${boxSize}px`} h={`${boxSize}px`} border="1px solid red">
-            <Box>Drag me!</Box>
-          </Box>
-        </Draggable>
-        <Box w={`${boxSize}px`} h={`${boxSize}px`} border="1px solid green"></Box>
-        <Box w={`${boxSize}px`} h={`${boxSize}px`} border="1px solid blue"></Box>
-      </Flex>
-    </Box> 
+      <Box w="700px" h="400px" border="1px solid #ED8713" borderRadius="12px"
+        style={{ position: 'relative', overflow: 'hidden' }}
+      >
+        <Flex  wrap="wrap">
+          <Draggable
+            bounds={{ left:-800, top:-3500, right: 600, bottom: 350 }}
+            position={boxPosition}
+            onDrag={(e, { x, y }) => {
+              setBoxPosition({ x, y });
+            }}
+          >
+            <div>
+              <Image src={hardmap1}/>
+            {/* <MapLine position={boxPosition} /> */}
+            </div>
+          </Draggable>
+        </Flex>
+      </Box>
+
     </>
   )
 };

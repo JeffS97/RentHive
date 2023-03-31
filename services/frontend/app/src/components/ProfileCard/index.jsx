@@ -32,9 +32,12 @@ export default function ProfileCard(props) {
 
   const mySavedString = localStorage.getItem('mySaved');
   const mySaved = JSON.parse(mySavedString);
-  console.log(mySaved)
-
-  const isSaved = mySaved.includes(props.name);
+  console.log(mySaved);
+  let isSaved = "";
+  if (mySaved === null || mySaved === "null") {
+  } else {
+    isSaved = mySaved.includes(props.name);
+  }
 
   // const isBookmarked = false;
 
@@ -52,13 +55,16 @@ export default function ProfileCard(props) {
       }
       
     } else {
-      navigate("/roommateprofile");
+      handleViewProfile(props.name);
     }
   };
 
   
-  const handleViewProfile =()=>{
-    console.log("hello")
+  function handleViewProfile (name) {
+    console.log("I am in profilecard handleViewProfile, and name is: " + name + ", and props is: ");
+    console.log(props);
+
+    localStorage.setItem("profilename", name);
     navigate("/roommateprofile")
   }
 
@@ -92,7 +98,7 @@ export default function ProfileCard(props) {
         </Box>
 
 
-        <Box bg="#FCEDC9" height="208px" width="253.6px" onClick={handleViewProfile}
+        <Box bg="#FCEDC9" height="208px" width="253.6px" onClick={()=>handleViewProfile(props.name)}
           borderBottomLeftRadius="20px" borderBottomRightRadius="20px"
           borderBottom="1px solid #000000">
           <Flex flexDirection="column" alignItems="center" >

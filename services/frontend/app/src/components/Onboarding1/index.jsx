@@ -46,6 +46,15 @@ import NavbarOnboarding from "../Navbars/NavbarOnboarding"
 export default function Onboarding1() {
     const navigate = useNavigate();
     const handleProceed = () => {
+        var myNameString = JSON.stringify(displayName);
+        localStorage.setItem('myName', myNameString);
+        console.log(myNameString)
+    
+        var myAgeString = JSON.stringify(age);
+        localStorage.setItem('myAge', myAgeString);
+    
+        var myGenderString = JSON.stringify(gender);
+        localStorage.setItem('myGender', myGenderString);
         navigate("/onboarding2");
     };
     // const history = useHistory();
@@ -93,36 +102,24 @@ export default function Onboarding1() {
     const [displayName, setDisplayName] = useState("")
     const [age, setAge] = useState("")
     const handleAgeChange = (e) => {
-        if (e.key === "Enter") {
-            setAge(e.target.value + " years");
-        }
+        setAge(e.target.value + " years");
     }
     const [gender, setGender] = useState("")
-
-
-    const myNameString = JSON.stringify(displayName);
-    localStorage.setItem('myName', myNameString);
-    console.log(myNameString)
-
-    const myAgeString = JSON.stringify(age);
-    localStorage.setItem('myAge', myAgeString);
-
-    const myGenderString = JSON.stringify(gender);
-    localStorage.setItem('myGender', myGenderString);
 
     return (
         <div>
             <NavbarOnboarding/>
             <Box>
-                <Box width="85%" height="550px" mx="auto">
-                    <Box justifyContent='center' mt='14' display='flex'>
-                        <Image ml="-15px" src={progress} alt='progress bar' h='35' w='350px' />
-                    </Box>
-                    <Box w='800px' h='80'  >
+                <Box width="85%" height="550px" mx="auto" marginTop="32px" display="flex" flexDirection="column" gap="16px" justifyContent="center" alignItems="center">
+                  <Box justifyContent='center' mt='14' display='flex'>
+                      <Image ml="-15px" src={progress} alt='progress bar' h='35' w='350px' />
+                  </Box>
+                  <Box className="main-content">
+                    <Box w='800px' h='80' alignSelf="flex-start" >
                         <Heading mt="15px" fontSize="24" fontWeight="700" lineHeight="0.8">Before we get started...</Heading>
                         <Text color="#6A6A6A" lineHeight="0.8">Let’s set up your basic information! This helps us get to know you. ✍</Text>
                     </Box>
-                    <Box w='1100px' h='400' mt='15'>
+                    <Box w='1100px' h='400' mt='15' >
                         <Flex>
                             <Box w='220px' h='278'>
                                 <Flex direction='column'>
@@ -207,7 +204,7 @@ export default function Onboarding1() {
                                                 fontSize='16px'
                                                 type="text"
                                                 outline='none'
-                                                onKeyDown={handleAgeChange}
+                                                onChange={handleAgeChange}
                                                 // onChange={(e)=>setAge(e.target.value)}
                                                 fontFamily='helvetica'
                                             // focusBorderColor="transparent"
@@ -272,6 +269,8 @@ export default function Onboarding1() {
                             </Box>
                         </Flex>
                     </Box>
+                  </Box>
+
                     {/* bottom page buttons */}
                     <Box mt='-10px' bg="">
                         <Button className="backbutton"

@@ -46,7 +46,7 @@ export default function Onboarding2() {
   };
 
   const handleProceed = () => {
-
+    localStorage.setItem("myDescription", description)
     navigate("/onboarding3");
 };
 
@@ -138,7 +138,7 @@ export default function Onboarding2() {
   return (
     <div>
       <NavbarOnboarding/>
-      <Box ml="10px" height="550px" width="85%" display="flex" margin="auto" flexDirection="column">
+      <Box ml="10px" height="550px" width="85%" display="flex" margin="auto" flexDirection="column" alignItems="center">
         <Image mt="15px" src={progress} h='35' w='350px' mx="auto" />
         <Box w='1100px' h='80' mt="10px" alignItems="center">
           <Heading mb="0px" fontSize="24" fontWeight="700" lineHeight="0.8">Awesome! Onto the next step...</Heading>

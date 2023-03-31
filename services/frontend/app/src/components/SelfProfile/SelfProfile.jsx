@@ -3,44 +3,27 @@ import {
 } from '@chakra-ui/react';
 import { Link, useNavigate, useEffect } from "react-router-dom";
 import {React, useState} from "react";
-import './Profile.css';
-import wave from "../../img/wave.jpg";
-import pic1 from "../../img/JessicaPicture1.png";
-import pic2 from "../../img/JessicaPicture2.jpg";
-import pic3 from "../../img/JessicaPicture3.jpg";
-import pic4 from "../../img/JessicaPicture4.jpg";
-import pic5 from "../../img/JessicaPicture5.jpg";
-import pic6 from "../../img/JessicaPicture6.jpg";
-import pic7 from "../../img/JessicaPicture7.jpg";
-import pic8 from "../../img/JessicaPicture8.jpg";
-import {MdOutlineMoreVert} from "react-icons/md";
+import './SelfProfile.css';
+import purplefield from "../../img/PurpleField.jpg";
 import OrangeTag from "./OrangeTag";
 import BlueTag from "./BlueTag";
-import SaveUserButton from './SaveUserButton';
+import EditUserButton from './EditUserButton';
 import SendInviteButton from './SendInviteButton';
 import Navbar from '../Navbars/Navbar';
 import users from "./MOCK_DATA.json";
+import profile from "./profile.jpeg"
+import profile2 from "./Kyedae2.jpeg"
+import profile3 from "./profile3.jpg"
 // import profilepic from "../../../public/Profilepics/guy2.png";
 
-export default function Profile({name}) {
+export default function SelfProfile({name}) {
     /*-------------------------------
-    GETTING USER DATA (Stored as user)
+    GETTING SELF USER DATA
     --------------------------------*/
-    var user = [];
-    //we know what user to display because when profilecard is clicked, 
-    //it passes the profilename to localstorage
-    const profilename = localStorage.getItem('profilename');
-    for (let i = 0; i < users.length; i++) {
-        if (users[i].full_name == profilename) {
-            user = users[i];
-            console.log(user);
-        }
-    }
-    /*-------------------------------------
-    PATH FORMATTING FOR GETTING PROFILE PIC
-    --------------------------------------*/
-    const profilePicPath = "../../../public" + JSON.stringify(user.icon).substring(1, JSON.stringify(user.icon).length-1);
-    console.log(profilePicPath);
+    const myName = localStorage.getItem("myName").substring(1, localStorage.getItem("myName").length -1);
+    const myAge = localStorage.getItem("myAge").substring(1, localStorage.getItem("myAge").length -1);
+    const myGender = localStorage.getItem("myGender").substring(1, localStorage.getItem("myGender").length -1);
+    const myDescription = localStorage.getItem("myDescription");
 
     return (
       <>
@@ -48,33 +31,29 @@ export default function Profile({name}) {
       <Box bg="#F0F0F0">
         <div className="grey-background">
             <div className="white-background">
+                
                 <div className="banner-container">
-                    <img src={wave}>
+                    <img src={purplefield}>
                     </img>
                 </div>
 
                 <div className="profile-header-main-info-and-buttons">
                     <div className="profile-header-top-row">
                         <div className="profile-picture-container">
-                            <img src={user.icon}></img>
+                            <img src={profile}></img>
                         </div>
 
                         <div className="name-age-gender-buttons-wrapper">
                             
                             <div className="name-age-gender-wrapper">
-                                <text className="title-text" style={{lineHeight:"28px"}}>{user.full_name}</text>
-                                <text className="grey-subtitle-text" style={{lineHeight:"28px"}}>{user.age} • {user.gender}</text>
+                                <text className="title-text" style={{lineHeight:"28px"}}>{myName}</text>
+                                <text className="grey-subtitle-text" style={{lineHeight:"28px"}}>{myAge} • {myGender}</text>
                             </div>
 
                             <div className="profile-buttons-wrapper">
-                                <SaveUserButton/>
-
-                                <SendInviteButton/>
-
-                                <button className="transparent-profile-button-container">
-                                    <MdOutlineMoreVert/>
-                                </button>
+                                <EditUserButton/>
                             </div>
+
                         </div>
                     </div>
 
@@ -82,26 +61,26 @@ export default function Profile({name}) {
                         <div className="social-media-detail">
                             <i class="fa-brands fa-telegram" />
                             <text className="grey-subtitle-text">
-                                {"@TeleMe!_" + user.full_name}
+                                {"@TeleMe!_" + myName}
                             </text>
                         </div>
                         <div className="social-media-detail">
                             <i class="fa-brands fa-instagram" />
                             <text className="grey-subtitle-text">
-                                {"@InstaTime_" + user.full_name}
+                                {"@InstaTime_" + myName}
                             </text>
                         </div>
                         <div className="social-media-detail">
                             <i class="fa-brands fa-facebook" />
                             <text className="grey-subtitle-text">
-                                {"facebook.com/" + user.full_name}
+                                {"facebook.com/" + myName}
                             </text> 
                         </div>
                     </div>
 
                     <div className="profile-header-description">
                         <text className="black-subtitle-text">
-                            {user.bio} 
+                            {myDescription} 
                         </text>
                     </div>
 
@@ -141,7 +120,7 @@ export default function Profile({name}) {
                     </text>
                   </div>
                   <div className="location-tags">
-                    <OrangeTag name={"" + user.tag1}/>
+                    <OrangeTag name="Bedok"/>
                     <BlueTag name="Tanah Merah"/>
                     <BlueTag name="Pasir Ris"/>
                   </div>
@@ -162,7 +141,7 @@ export default function Profile({name}) {
                     </text>
                   </div>
                   <div className="interests-tags">
-                    <OrangeTag name={"" + user.tag2}/>
+                    <OrangeTag name="Basketball"/>
                     <OrangeTag name="Music"/>
                     <BlueTag name="Painting"/>
                     <BlueTag name="Dancing"/>
@@ -172,29 +151,14 @@ export default function Profile({name}) {
 
                 <div className="picture-grid">
                   <div className="picture-item">
-                    <img src={pic1}/>
+                    <img src={profile2}/>
                   </div>
                   <div className="picture-item">
-                    <img src={pic2}/>
+                    <img src={profile3}/>
                   </div>
-                  <div className="picture-item">
+                  {/* <div className="picture-item">
                     <img src={pic3}/>
-                  </div>
-                  <div className="picture-item">
-                    <img src={pic4}/>
-                  </div>
-                  <div className="picture-item">
-                    <img src={pic5}/>
-                  </div>
-                  <div className="picture-item">
-                    <img src={pic6}/>
-                  </div>
-                  <div className="picture-item">
-                    <img src={pic7}/>
-                  </div>
-                  <div className="picture-item">
-                    <img src={pic8}/>
-                  </div>
+                  </div> */}
                 </div>
 
             </div>
