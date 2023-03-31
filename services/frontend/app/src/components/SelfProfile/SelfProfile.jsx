@@ -31,6 +31,7 @@ export default function SelfProfile({name}) {
       <Box bg="#F0F0F0">
         <div className="grey-background">
             <div className="white-background">
+                
                 <div className="banner-container">
                     <img src={purplefield}>
                     </img>

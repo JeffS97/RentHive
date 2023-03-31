@@ -11,9 +11,15 @@ import Navbar from "../Navbars/Navbar"
 import MatchedSection from "../MatchedSection"
 import stats from "../../img/stats.png"
 import tooltip from "../../img/Tooltip.png"
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+    const navigate = useNavigate();
+    if (localStorage.getItem("myName")=== undefined || localStorage.getItem("myName")=== null) {
+        navigate("/login");
+    }
     const username = localStorage.getItem("myName").substring(1, localStorage.getItem("myName").length -1);
+
   return (
     <div>
       <Navbar />
