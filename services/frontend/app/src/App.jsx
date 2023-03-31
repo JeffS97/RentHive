@@ -15,6 +15,7 @@ import Layout from "./layouts";
 import './App.css';
 import { SavedProfilePage } from "./routes";
 import {SelfProfile} from "./routes";
+import {SamuelProfile} from "./routes";
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path="/roommateprofile" element={<ProfilePage />} />
           <Route path="/mapline" element={<MapLinePage />} />
           <Route path="/selfprofile" element={<SelfProfile />} />
+          <Route path="/samuelprofile" element={<SamuelProfile/>}/>
 
         </Routes>
     </Router>

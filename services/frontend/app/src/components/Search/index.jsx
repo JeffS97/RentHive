@@ -182,36 +182,42 @@ export default function Search() {
     <NavbarSearch/>
       <Box bg="#F5F5F5" position="relative" zIndex="1" >
 
-        <InputGroup position="absolute" zIndex="9" mt="19px" width="20px" >
-          <Menu bg="#FFFFFF" >
-            <MenuButton ml="875px"
-              as={IconButton}
-              aria-label='Options'
-              icon={<GrFilter />}
-              outline="none"
-              borderColor="transparent"
-              background="transparent"
-              onClick={() => setIsMenuOpen(true)}
+        {/* this is the search row */}
+        <Flex border="1px solid red">
+          {/* this is the filter icon */}
+          <InputGroup position="absolute" zIndex="9" mt="19px" width="20px" >
+            <Menu bg="#FFFFFF" >
+              <MenuButton
+                as={IconButton}
+                aria-label='Options'
+                icon={<GrFilter />}
+                outline="none"
+                borderColor="transparent"
+                background="transparent"
+                border="1px solid blue"
+                onClick={() => setIsMenuOpen(true)}
 
-            />
-            <MenuList mt="65px" ml="-740px">
+              />
+              <MenuList mt="65px" ml="-740px">
 
-              <Box width="1000px" display="flex" >
-                {isMenuOpen && (
-                  <Filterlist callback={callFromFilterList} />
-                )}
-              </Box>
+                <Box width="1000px" display="flex" >
+                  {isMenuOpen && (
+                    <Filterlist callback={callFromFilterList} />
+                  )}
+                </Box>
 
-            </MenuList>
-          </Menu>
-        </InputGroup>
-
-        <Flex >
+              </MenuList>
+            </Menu>
+          </InputGroup>
           <InputGroup mt="10px" justifyContent="center" >
+            {/* this is the search icon */}
             <InputLeftElement mt="10px" ml="375px" 
-              pointerEvents="none"
+              pointerEvents="none" border="1px solid blue"
               children={<AiOutlineSearch color="gray.300" />} />
-            <Input width="500px" height="30px" pl="40px"
+            {/* this is the search bar */}
+            <Input 
+                
+                width="500px" height="30px" pl="40px"
               type="text"
               textAlign="flex-start"
               placeholder="Search here for your ideal roommate"
@@ -222,7 +228,7 @@ export default function Search() {
             />
           </InputGroup>
         </Flex>
-        <div >
+        <div>
           <div style={{
             zIndex: "10", position: "absolute", backgroundColor: "#FFFFFF", marginTop:"0px",
             marginLeft: "360px", width: "545px",  borderRadius:"12px" 
