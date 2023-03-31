@@ -218,8 +218,6 @@ export default function Search() {
             />
           </InputGroup>
         </Flex>
-<<<<<<< Updated upstream
-=======
         <div>
           <div style={{
             zIndex: "10", position: "absolute", backgroundColor: "#FFFFFF", marginTop:"0px",
@@ -244,7 +242,6 @@ export default function Search() {
           </div>
         </div>
 
->>>>>>> Stashed changes
 
         <Box display="flex" flexDirection="row" alignContent="center" height="25px"
           position="relative" zIndex="1">
