@@ -5,7 +5,7 @@ import {
 
 } from '@chakra-ui/react';
 
-import React from "react";
+import {React, useEffect} from "react";
 import NetworkMap from "../NetworkMap"
 import Navbar from "../Navbars/Navbar"
 import MatchedSection from "../MatchedSection"
@@ -15,12 +15,23 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
     const navigate = useNavigate();
-    if (localStorage.getItem("myName")=== undefined || localStorage.getItem("myName")=== null) {
-        navigate("/login");
-    }
-    const username = localStorage.getItem("myName").substring(1, localStorage.getItem("myName").length -1);
+    let username = "";
+    useEffect(() => {
+        const myName = localStorage.getItem("myName");
+        console.log(myName);
+        console.log(myName === null);
+        if (myName === null || myName === undefined || myName === "null") {
+            console.log("Navigating to login page...");
+            navigate("/signup");
+        } else {
+            username = myName.substring(1, localStorage.getItem("myName").length -1);
+        }
+    })
 
   return (
+    username === "" ? 
+    <div>no username detected, please make an account!</div> 
+    :
     <div>
       <Navbar />
       <div style={{
