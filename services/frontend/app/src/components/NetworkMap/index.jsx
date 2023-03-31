@@ -16,15 +16,23 @@ import './SnapMap.css'
 import Draggable from 'react-draggable';
 import MapLine from "../MapLine"
 import hardmap1 from "../../img/hardmap1.png"
+import hardmap2 from "../../img/hardmap2.png"
+import {useNavigate} from "react-router-dom";
 
 const SocialMap = () => {
+    const navigate = useNavigate();
   const [boxPosition, setBoxPosition] = useState({ x: 0, y: 0 });
+  function handleClick() {
+    console.log("Clicked");
+    navigate("/samuelprofile");
+  }
 
   // }
   return (
     <>
       <Box w="700px" h="400px" border="1px solid #ED8713" borderRadius="12px"
         style={{ position: 'relative', overflow: 'hidden' }}
+        onClick={handleClick}
       >
         <Flex  wrap="wrap">
           <Draggable
@@ -34,10 +42,8 @@ const SocialMap = () => {
               setBoxPosition({ x, y });
             }}
           >
-            <div>
-              <Image src={hardmap1}/>
+              <img src={hardmap2} objectFit="cover" width="100%" height="100%"/>
             {/* <MapLine position={boxPosition} /> */}
-            </div>
           </Draggable>
         </Flex>
       </Box>

@@ -1,0 +1,312 @@
+/*-----------------------
+TEXT STYLES
+-----------------------*/
+.title-text{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.grey-subtitle-text{
+    font-size: 18px;
+    color: #4E4E4E;
+    font-weight: 500;
+}
+
+.grey-body-text{
+    font-size: 14px;
+    color: #4E4E4E;
+    font-weight: 500;
+}
+
+.black-subtitle-text{
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+}
+
+.white-small-text{
+    font-size: 12px;
+    color: white;
+    font-weight: 500;
+}
+
+.grey-small-text{
+    font-size: 12px;
+    color: #4E4E4E;
+    font-weight: 500;
+}
+
+/*-----------------------
+BACKGROUND
+-----------------------*/
+.grey-background{
+    width:100wh;
+    height:100%;
+    background-color: #F0F0F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:40px;
+    margin-left: 10px;
+}
+.white-background{
+    width:90%;
+    height:auto;
+    border-radius: 20px;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 48px;
+}
+
+/*-----------------------
+PROFILE HEADER
+-----------------------*/
+/* banner image styles */
+
+.banner-container{
+    width:100%;
+    height:200px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow:hidden;
+    z-index: 1;
+}
+
+.banner-container img{
+    width: 100%; /* set the width of the image to fill the container */
+    height: 100%; /* set the height of the image to fill the container */
+    object-fit: cover;
+}
+
+
+/* profile picture styles */
+.profile-picture-container{
+    width:108px;
+    height:108px;
+    border-radius:1000px;
+    background-image: linear-gradient(45deg, #D1A125, #E47C31, #388DDB);
+    padding:4px;
+    overflow: hidden;
+}
+
+.profile-picture-container img{
+    width:100%;
+    height:100%;
+    border-radius:1000px;
+    object-fit: cover;
+}
+
+/* profile header main info and buttons */
+.profile-header-main-info-and-buttons{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:4px;
+    z-index: 2;
+    margin-top: -16px;
+}
+
+.profile-header-top-row{
+    width: 100%;
+    display: flex;
+    padding:4px;
+    gap:20px;
+}
+
+.name-age-gender-wrapper{
+    grid-column: 1;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-buttons-wrapper{
+    grid-column: 3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:16px;
+}
+
+.name-age-gender-buttons-wrapper{
+    width: 86%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+
+.profile-header-contact-details{
+    width:90%;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:20px;
+    padding:12px;
+}
+
+.social-media-detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.profile-header-description{
+    width: 90%;
+    padding: 8px;
+}
+
+.profile-header-mutuals-section{
+    width: 90%;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+
+}
+
+.mutual-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 8px;
+    gap: 4px;
+}
+
+/*button styles*/
+
+.yellow-profile-button-container{
+    width: 128px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #F9D88A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    gap: 8px;
+    border:none;
+}
+
+.outlined-profile-button-container{
+    width: 128px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    gap: 8px;
+    border: 2px solid #F9D88A;
+}
+
+/* .outlined-profile-button-container:hover {
+    width: 128px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #F9D88A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    gap: 8px;
+} */
+
+.transparent-profile-button-container{
+    width:40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    background-color: white;
+}
+
+/*-----------------------
+DIVIDER
+-----------------------*/
+.profile-line {
+    border-bottom: 1px solid black; /* creates a horizontal line with 1px thickness and black color */
+    width: 80%; /* sets the width of the line to the full width of its parent element */
+  }
+
+/*-----------------------
+TAGS
+-----------------------*/
+/*container for one category of tags*/
+.tags-grid{
+    width: 75%;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 16px;
+    padding: 32px;
+}
+/*tag labels*/
+.tag-label-location{
+    grid-row: 1;
+    grid-column: 1;
+}
+.tag-label-traits{
+    grid-row: 2;
+    grid-column: 1;
+}
+.tag-label-interests{
+    grid-row: 3;
+    grid-column: 1;
+}
+/*the tags themselves*/
+.location-tags{
+    display: flex;
+    gap: 8px;
+    grid-row: 1;
+    grid-column:2;
+}
+.traits-tags{
+    display: flex;
+    gap: 8px;
+    grid-row: 2;
+    grid-column:2;
+}
+.interests-tags{
+    display: flex;
+    gap: 8px;
+    grid-row: 3;
+    grid-column:2;
+}
+
+/*-----------------------
+PICTURES
+-----------------------*/
+.picture-grid{
+    width: 85%;
+    height: 1fr;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    padding: 32px;
+    grid-row-gap: 24px;
+}
+
+.picture-item{
+    width:200px;
+    height:200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: #F9D88A;
+    overflow: hidden;
+    margin-left: 12px;
+}
+
+.picture-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
