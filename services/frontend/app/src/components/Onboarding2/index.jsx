@@ -182,8 +182,9 @@ export default function Onboarding2() {
                 </Flex>
                 <div >
                   <div style={{
-                    zIndex: "1", position: "absolute", backgroundColor: "#FEF9EC",
+                    zIndex: "1", position: "absolute", backgroundColor: "#FFFFFF",
                     marginLeft: "20px", width: "200px", borderRadius: "12px"
+                    
                   }}>
                     {data.filter(item => {
                       const searchTerm = value.toLowerCase();
@@ -193,7 +194,7 @@ export default function Onboarding2() {
                       )
                     }).slice(0, 10)
                       .map((item, index) => (
-                        <div style={{ fontSize: "16px" }}
+                        <div style={{ fontSize: "12px", marginLeft:"40px", color:"grey.100", marginTop:"10px"}}
 
                           onClick={() => onAdd(item.full_name)}
                           key={item.full_name}

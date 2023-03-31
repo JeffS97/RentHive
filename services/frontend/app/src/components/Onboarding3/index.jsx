@@ -260,7 +260,7 @@ export default function Onboarding3() {
                             <Box >
                                 <Box mt="17px" mb="15px" height="20px" display="flex" alignItems="center">
                                     <Text fontSize="18px" fontWeight="600" >Filters</Text>
-                                    <input style={{marginLeft:"20px", marginTop:"4px"}} type="checkbox"></input>
+                                    <input style={{ marginLeft: "20px", marginTop: "4px" }} type="checkbox"></input>
                                     <Text ml="3px" color="#5A5A5A" fontSize="12px" fontWeight="500" >Match my chosen traits</Text>
                                 </Box>
                                 <Flex >
@@ -290,8 +290,8 @@ export default function Onboarding3() {
 
                                 <div >
                                     <div style={{
-                                        zIndex: "1", position: "absolute", backgroundColor: "#FEF9EC",
-                                        marginLeft: "20px", width: "200px", borderRadius: "12px"
+                                    zIndex: "1", position: "absolute", backgroundColor: "#FFFFFF",
+                                     width: "440px", borderRadius: "12px"
                                     }}>
                                         {data.filter(item => {
                                             const searchTerm = value.toLowerCase();
@@ -301,7 +301,7 @@ export default function Onboarding3() {
                                             )
                                         }).slice(0, 10)
                                             .map((item, index) => (
-                                                <div style={{ fontSize: "16px" }}
+                                                <div style={{ fontSize: "12px", marginLeft:"40px", color:"grey.100", marginTop:"10px"}}
 
                                                     onClick={() => onAdd(item.full_name)}
                                                     key={item.full_name}

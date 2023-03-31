@@ -47,8 +47,11 @@ import NavbarSearch from "../Navbars/NavbarSearch";
 
 
 export default function Search() {
+
+  var recco = require("./RECCO_DATA.json")
+
   const navigate = useNavigate();
-// THIS PORTION IS TO SAVE PROFILECARD
+  // THIS PORTION IS TO SAVE PROFILECARD
   const [saved, setSaved] = useState([])
 
   const handleSavedName = (name) => {
@@ -56,7 +59,7 @@ export default function Search() {
     setSaved(newSaved);
   };
 
-  const handleRemoveName=(name)=> {
+  const handleRemoveName = (name) => {
     const newSaved = saved.filter((savedName) => savedName !== name);
     setSaved(newSaved);
     console.log(newSaved);
@@ -98,6 +101,13 @@ export default function Search() {
 
     }
   };
+
+  const onAdd = (query) => {
+    setQuery(query)
+    const abc = [...filterby, query]
+    setFilterBy(abc)
+    setQuery("")
+  }
 
   function handleSortChange(event) {
     const value = event.target.value;
@@ -166,7 +176,7 @@ export default function Search() {
     setIsMenuOpen(false);
   }
 
-  const handleViewProfile =()=>{
+  const handleViewProfile = () => {
     console.log("hello")
     navigate("/roommateprofile")
   }
@@ -175,7 +185,7 @@ export default function Search() {
 
   return (
     <>
-        <NavbarSearch/>
+      <NavbarSearch />
       <Box bg="#F5F5F5" position="relative" zIndex="1" >
 
         <InputGroup position="absolute" zIndex="9" mt="19px" >
@@ -218,6 +228,30 @@ export default function Search() {
             />
           </InputGroup>
         </Flex>
+        <div >
+          <div style={{
+            zIndex: "10", position: "absolute", backgroundColor: "#FFFFFF", marginTop:"0px",
+            marginLeft: "360px", width: "545px",  borderRadius:"12px" 
+            // borderBottomLeftRadius:"12px",borderBottomRightRadius:"12px",
+            // boxShadow:"0px 0px 10px rgba(0, 0, 0, 0.2)"
+          }}>
+            {recco.filter(item => {
+              const searchTerm = query.toLowerCase();
+              const fullName = item.full_name.toLowerCase();
+              return (
+                searchTerm && (fullName.startsWith(searchTerm) || fullName.includes(searchTerm)) && fullName !== searchTerm
+              )
+            }).slice(0, 10)
+              .map((item, index) => (
+                <div style={{ fontSize: "12px", marginLeft:"40px", color:"grey.100", marginTop:"10px"}}
+                
+                  onClick={() => onAdd(item.full_name)}
+                  key={item.full_name}
+                >{item.full_name}</div>
+              ))}
+          </div>
+        </div>
+
 
         <Box display="flex" flexDirection="row" alignContent="center" height="25px"
           position="relative" zIndex="1">
@@ -311,7 +345,7 @@ export default function Search() {
           </Box>
         </Box>
 
-        <Box  ml="100px" width="1070px" mt={filterby.length * 20} display="flex" flexDirection="row" flexWrap="wrap">
+        <Box ml="100px" width="1070px" mt={filterby.length * 20} display="flex" flexDirection="row" flexWrap="wrap">
           {totalFilter.length > 0 ? (
             <Box width="1200px" display="flex" flexDirection="row" flexWrap="wrap">
               {
@@ -322,28 +356,28 @@ export default function Search() {
                         <>
                           <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                             bio={item.bio} match={item.match} icon={item.icon}
-                            tag1={item.tag1} tag2={item.tag2}  
+                            tag1={item.tag1} tag2={item.tag2}
                             handleSavedName={handleSavedName}
                             handleRemoveName={handleRemoveName}
                             onClick={handleViewProfile}
-                            />
+                          />
                         </>
                       )
                     } else if (item.age.toLowerCase().includes(totalFilter[i].toLowerCase())) {
                       return (
                         <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                           bio={item.bio} match={item.match} icon={item.icon}
-                          tag1={item.tag1} tag2={item.tag2}  more={item.more}
-                           handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
-                           onClick={handleViewProfile}/>
+                          tag1={item.tag1} tag2={item.tag2} more={item.more}
+                          handleSavedName={handleSavedName} handleRemoveName={handleRemoveName}
+                          onClick={handleViewProfile} />
                       )
                     } else if (item.gender.toLowerCase().includes(totalFilter[i].toLowerCase())) {
                       return (
                         <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                           bio={item.bio} match={item.match} icon={item.icon}
-                          tag1={item.tag1} tag2={item.tag2}   more={item.more}
-                          handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
-                          onClick={handleViewProfile}/>
+                          tag1={item.tag1} tag2={item.tag2} more={item.more}
+                          handleSavedName={handleSavedName} handleRemoveName={handleRemoveName}
+                          onClick={handleViewProfile} />
 
                       )
                     } else if (item.tag1.toLowerCase().includes(totalFilter[i].toLowerCase())) {
@@ -351,16 +385,16 @@ export default function Search() {
                         <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2} more={item.more}
-                          handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
-                          onClick={handleViewProfile}/>
+                          handleSavedName={handleSavedName} handleRemoveName={handleRemoveName}
+                          onClick={handleViewProfile} />
                       )
                     } else if (item.tag2.toLowerCase().includes(totalFilter[i].toLowerCase())) {
                       return (
                         <ProfileCard name={item.full_name} age={item.age} gender={item.gender}
                           bio={item.bio} match={item.match} icon={item.icon}
                           tag1={item.tag1} tag2={item.tag2} more={item.more}
-                          handleSavedName={handleSavedName}  handleRemoveName={handleRemoveName}
-                          onClick={handleViewProfile}/>
+                          handleSavedName={handleSavedName} handleRemoveName={handleRemoveName}
+                          onClick={handleViewProfile} />
 
                       )
                     }
@@ -384,10 +418,10 @@ export default function Search() {
                           <ProfileCard name={filterby.full_name} age={filterby.age} gender={filterby.gender}
                             bio={filterby.bio} match={filterby.match} icon={filterby.icon}
                             tag1={filterby.tag1} tag2={filterby.tag2} more={filterby.more}
-                             handleSavedName={handleSavedName}  
-                             handleRemoveName={handleRemoveName}
-                             onClick={handleViewProfile}/>
-                             
+                            handleSavedName={handleSavedName}
+                            handleRemoveName={handleRemoveName}
+                            onClick={handleViewProfile} />
+
                         </>
                       )
                     }
